@@ -1,9 +1,10 @@
 const express = require('express')
-const route = express.Router()
+const router = express.Router()
 
 const sitecontrollers = require('../app/controllers/SiteControllers')
 
 
-route.use('/', sitecontrollers.home)
+// router.get('/', sitecontrollers.home)
+router.get('/', sitecontrollers.index)
 
 module.exports = router;
