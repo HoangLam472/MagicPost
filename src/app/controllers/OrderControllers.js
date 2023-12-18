@@ -1,16 +1,25 @@
 const Order = require("../models/oders")
-const Users = require("../models/users")
+
 class OrderControllers {
-    // get /home
-    index(req, res, next) {
-        // Order.find({})
-        // .then(oders => res.json(oders))
-        // .catch(next)
-        Users.find({})
-        .then(users => res.json(users))
+    // get /order
+    order(req, res, next) {
+        Order.find({})
+        .then(oders => res.json(oders))
         .catch(next)
     }
-    
+
+    create(req, res, next) {
+        res.render('create');
+    }
+
+    store(req, res, next) {
+        // const order = new Order(req.body);
+        // order
+        //     .save()
+        //     .then(() => res.send('save'))
+        //     .catch((error) => {});
+        res.json(req.body)
+    }
 
 }
 
