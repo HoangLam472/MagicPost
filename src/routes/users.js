@@ -4,8 +4,10 @@ const router = express.Router()
 
 const usercontrollers = require('../app/controllers/UserControllers')
 
-router.use('/create', usercontrollers.create)
-router.post('/createuser', usercontrollers.createuser)
+router.use('/createemployee', usercontrollers.createepe)
+router.use('/createpointmanager', usercontrollers.createpmr)
+router.post('/createemployee/:pointManagerId', usercontrollers.createemployee)
+router.post('/createpointmanager', usercontrollers.createpointmanager)
 router.get('/', usercontrollers.user)
 
 module.exports = router;

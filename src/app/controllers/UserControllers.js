@@ -9,12 +9,14 @@ class UserControllers {
         .catch(next)
     }
 
-    create(req, res, next) {
-        res.render('create');
+    createepe(req, res, next) {
+        res.render('createemployee');
     }
-
-    // post/ user
-    createuser(req, res, next) {
+    createpmr(req, res, next) {
+      res.render('createmanager');
+  }
+    // post/ user/ pointmanager tạo tài khoản mới
+    createemployee(req, res, next) {
         const pointManagerId = req.params.pointManagerId;
          const newEmployeeData = req.body;
          Users.updateOne(
@@ -28,8 +30,33 @@ class UserControllers {
               console.error('Error adding Employee to pointManager:', error);
               res.status(500).send('Internal Server Error');
             });
+        // res.json(req.query.pointManagerId)
         // res.send(req.body)
+
     }
+
+    createpointmanager(req, res, next) {
+      const pointManagerId = req.params.pointManagerId;
+       const newPointManagerData = req.body;
+       Users.updateOne(
+        { 'managedAccounts._id': pointManagerId },
+        {
+          $push: {
+            'managedAccounts': newPointManagerData,
+          },
+        },
+        )
+          .then(() => {
+            res.status(200).send('Employee added to pointManager successfully');
+          })
+          .catch((error) => {
+            console.error('Error adding Employee to pointManager:', error);
+            res.status(500).send('Internal Server Error');
+          });
+      // res.json(req.query.pointManagerId)
+      // res.send(req.body)
+
+  }
 
 }
 

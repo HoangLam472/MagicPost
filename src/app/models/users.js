@@ -9,6 +9,7 @@ const employeeSchema = new Schema({
 const pointManagerSchema = new Schema({
   username: { type: String, required: true },
   password: { type: String, required: true },
+  location: { type: String, require: true},
   managedEmployees: [employeeSchema]
 });
 
