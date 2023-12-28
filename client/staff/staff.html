@@ -102,7 +102,7 @@
                         </tbody>
                         <tfoot></tfoot>
                     </table> -->
-            <form action="#" class="staff__form none" id="staff__form">
+            <form class="staff__form none" id="staff__form">
               <div class="staff__form--box1">
                 <div class="box1--Sender">
                   <h1 class="form__box--title">Người gửi</h1>
@@ -113,14 +113,14 @@
                         <h3>Họ tên</h3>
                         <span class="important">*</span>
                       </div>
-                      <input type="text" placeholder="Họ tên" />
+                      <input type="text" id="oder-username" placeholder="Họ tên" />
                     </div>
                     <div class="form__box1--1-phone">
                       <div style="display: flex">
                         <h3>Điện thoại</h3>
                         <span class="important">*</span>
                       </div>
-                      <input type="text" placeholder="Điện thoại người gửi" />
+                      <input type="text" id="order-phone" placeholder="Điện thoại người gửi" />
                     </div>
                   </div>
                   <div class="form__box1--address">
@@ -129,6 +129,7 @@
                       <span class="important">*</span>
                     </div>
                     <input
+                      id="order-address"
                       type="text"
                       style="width: 100%"
                       placeholder="Địa chỉ người gửi"
@@ -144,14 +145,14 @@
                         <h3>Số điện thoại</h3>
                         <span class="important">*</span>
                       </div>
-                      <input type="text" placeholder="Số điện thoại" />
+                      <input id="recieve-phone" type="text" placeholder="Số điện thoại" />
                     </div>
                     <div class="form__box1--2-user">
                       <div style="display: flex">
                         <h3>Họ tên</h3>
                         <span class="important">*</span>
                       </div>
-                      <input type="text" placeholder="Họ tên" />
+                      <input id="recieve-name" type="text" placeholder="Họ tên" />
                     </div>
                   </div>
                   <div class="form__box1--address">
@@ -160,6 +161,7 @@
                       <span class="important">*</span>
                     </div>
                     <input
+                      id="recieve-address"
                       type="text"
                       style="width: 100%"
                       placeholder="Địa chỉ người nhận"
@@ -176,6 +178,7 @@
                     <span class="important">*</span>
                   </div>
                   <input
+                    id="product-name"
                     type="text"
                     style="width: 100%"
                     placeholder="Tên sản phẩm"
@@ -187,21 +190,21 @@
                       <h3>Giá</h3>
                       <span class="important">*</span>
                     </div>
-                    <input type="text" style="width: 98%" placeholder="vnd" />
+                    <input id="product-price" type="text" style="width: 98%" placeholder="vnd" />
                   </div>
                   <div class="form__box2--1-mass">
                     <div style="display: flex">
                       <h3>Khối lượng</h3>
                       <span class="important">*</span>
                     </div>
-                    <input type="text" style="width: 98%" placeholder="gram" />
+                    <input id="product-kl" type="text" style="width: 98%" placeholder="gram" />
                   </div>
                   <div class="form__box2--1-quantity">
                     <div style="display: flex">
                       <h3>Số lượng</h3>
                       <span class="important">*</span>
                     </div>
-                    <input type="text" placeholder="" style="width: 100%" />
+                    <input id="product-quantity" type="text" placeholder="" style="width: 100%" />
                   </div>
                 </div>
                 <div class="form__box2--2">
@@ -211,6 +214,7 @@
                       <span class="important">*</span>
                     </div>
                     <input
+                      id="product-length"
                       type="text"
                       placeholder="Dài(cm)"
                       style="width: 100%"
@@ -222,6 +226,7 @@
                       <span class="important"></span>
                     </div>
                     <input
+                      id="product-rong"
                       type="text"
                       placeholder="Rộng(cm)"
                       style="width: 100%"
@@ -233,6 +238,7 @@
                       <span class="important"></span>
                     </div>
                     <input
+                      id="product-heigh"
                       type="text"
                       placeholder="Cao(cm)"
                       style="width: 100%"
@@ -241,7 +247,7 @@
                 </div>
                 <div class="form__box2--note">
                   <h3>Ghi chú</h3>
-                  <textarea name="" id="" cols="30" rows="4"></textarea>
+                  <textarea name="" id="order-note" cols="30" rows="4"></textarea>
                 </div>
               </div>
               <div class="staff__form--box3">
@@ -252,27 +258,25 @@
                     <h3>Tình trạng vận chuyển</h3>
                     <span class="important">*</span>
                   </div>
-                  <select name="" id="">
+                  <select name="" id="bill-status">
                     <option value="Chưa giao">Chưa giao</option>
                     <option value="Đã giao">Đã giao</option>
                     <option value="Giao thành công">Giao thành công</option>
                   </select>
                 </div>
                 <div class="form__box3--customercheck">
-                   
                     <div style="display: flex; margin-top: 20px;">
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="" id="cho-xem">
                         <h3 style="margin-top: 8px;" >Cho khách xem hàng</h3>
                       </div>
                 </div>
                 <div class="form__box3--battery">
-                   
                     <div style="display: flex">
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="" id="chat-long">
                         <h3 style="margin-top: 8px;"> Hàng chất lỏng,pin sạc</h3>
                       </div>
                 </div>
-                <button type="submit">Tạo bưu gửi</button>
+                <button type="submit" id="create-order">Tạo bưu gửi</button>
                 <h3 class="print" id="print" onclick="printForm()">In bưu gửi</h3>
               </div>
             </form>
@@ -281,5 +285,6 @@
       </div>
     </div>
     <script src="../js/staff.js"></script>
+    <script src="../js/order.js"></script>
   </body>
 </html>
