@@ -4,6 +4,7 @@ const validateMongoDbId = require("../utils/validateMongodbid");
 
 const createOrder = asyncHandler(async (req, res) => {
   try {
+    console.log(req.body);
     const newOrder = await Order.create(req.body);
     res.json(newOrder);
   } catch (error) {

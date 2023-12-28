@@ -54,6 +54,7 @@ const registerLeader = asyncHandler(async (req, res) => {
 // Login a User
 const loginUserController = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
+  console.log(email, password);
   // check if user exists or not
   const findUser = await User.findOne({ email });
   if (
