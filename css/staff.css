@@ -24,7 +24,7 @@ body{
     display: flex;
     height: 58px;
     background-color: #0b202d;
-    width: calc(100vw - 200px);
+    width: calc(100vw - 195px);
     align-items: center;
     position: relative;
 }
@@ -69,11 +69,13 @@ input{
 }
 .staff__header--text{
     position: absolute;
-    right: 9%;
+    right: 6%;
     font-size: 18px;
     margin-right: 5px;
 }
 .icon--angle{
+    position: absolute;
+    right: 5%;
     font-size: 14px;
     margin-top: 2px;
     cursor: pointer;
