@@ -1,0 +1,133 @@
+*{
+    color: #FFF;
+}
+.manager__container{
+    display: flex;
+}
+.manager__leftbar{
+    width: 200px;
+    background-color: #0b202d;
+    height: 100vh;
+    padding: 0 10px;
+}
+.manager__leftbar--title{
+    color: #FFF;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.manager__header{
+    display: flex;
+    height: 58px;
+    background-color: #0b202d;
+    width: calc(100vw - 200px);
+    align-items: center;
+}
+.icon--menu{
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 950px;
+    cursor: pointer;
+}
+input{
+    height: 25px;
+    padding-left: 5px;
+    border-radius: 2px;
+    outline: none;
+    color: #0e0505;
+}
+.icon--seach{
+    width: 23px;
+    height: 23px;
+    background-color: rgb(41, 41, 121);
+    line-height: 23px;
+    text-align: center;
+    border-radius: 2px;
+    transform: translate(-23px,0.3px);
+    font-size: 14px;
+}
+.icon--user{
+    font-size: 14px;
+    margin-right: 5px;
+}
+.manager__header--text{
+    font-size: 18px;
+    margin-right: 5px;
+}
+.icon--angle{
+    font-size: 14px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+.list__1 {
+    display: none;
+}
+.list__1.show {
+    display: block;
+}
+.list__1--title, .list__2--title{
+    font-size: 18px;
+    cursor: pointer;
+}
+.list__1--items span{
+    font-size: 16px;
+    margin-left: 3px;
+    cursor: pointer;
+}
+.list__1--items span i{
+    font-size: 12px;
+}
+.list__1--1 li, .list__1--2 li{
+    font-size: 14px;
+    margin-left: 10px;
+}
+.list__1--1-items{
+    cursor: pointer;
+}
+.list__1--1 {
+    display: none;
+}
+.list__1--1.show {
+    display: block;
+}
+.list__1--2{
+    display: none;
+}
+.list__1--2.show {
+    display: block;
+}
+.manager__main{
+    padding: 16px;
+}
+
+
+td, tr, th{
+    color: #0e0505;
+    border: 1px solid #181717;
+    text-align: center;
+}
+tr:hover{
+    background-color: #ccc;
+    transition: all 0.2s ease;
+}
+table{
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+.none{
+    display: none;
+}
+.btn {
+    color: #fff;
+    background-color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #ccc;
+    color: black;
+    cursor: pointer;
+}
