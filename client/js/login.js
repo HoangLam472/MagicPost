@@ -42,13 +42,15 @@ function login_staff (username, password, role) {
         body: JSON.stringify({ email: username, password: password })
     }).then((res) => {
         if (!res.ok) {
-            console.log("Sai tên đăng nhập hoặc mật khẩu");
+            alert("Sai tên đăng nhập hoặc mật khẩu")
+            return;
         } else {
             return res.json();
         }
     }).then((data) => {
         if (!data) {
-            console.log('Lỗi');
+            alert("Lỗi server")
+            return;
         } else {
             const role = data.role;
             window.sessionStorage.setItem('token', data.token);
