@@ -3,7 +3,6 @@ const Point = require("../models/pointModel");
 const asyncHandler = require("express-async-handler");
 const { generateToken } = require("../config/jwtToken");
 
-const Mongoose = require("mongoose");
 const { Error } = require("mongoose");
 
 const validateMongoDbId = require("../utils/validateMongodbid");
@@ -16,23 +15,20 @@ const { generateRefreshToken } = require("../config/refreshtoken");
 // Register Staff
 const registerUser = asyncHandler(async (req, res) => {
   const email = req.body.email;
-  const id  = req.params.id;
-  try {
-    const findUser = await User.findOne({ email });
-    const findPoint = await Point.findOne({ _id: new Mongoose.Types.ObjectId(id) });
-    if (!findUser && findPoint) {
-      // Create a new user
-      const newUser = await User.create({
-        ...req.body,
-        postOfficeId: id,
-      });
-      res.json(newUser);
-    } else {
-      // User already exists
-      throw new Error("User Already Exists");
-    }
-  } catch(err) {
-    console.log(err);
+  const { id } = req.params;
+  const findUser = await User.findOne({ email });
+  const findPoint = await Point.findOne({ _id: id });
+  console.log(findUser, findPoint);
+  if (!findUser && findPoint) {
+    // Create a new user
+    const newUser = await User.create({
+      ...req.body,
+      postOfficeId: id,
+    });
+    res.json(newUser);
+  } else {
+    // User already exists
+    throw new Error("User Already Exists");
   }
 });
 
@@ -56,11 +52,51 @@ const registerLeader = asyncHandler(async (req, res) => {
 });
 
 // Login a User
-const loginUserController = asyncHandler(async (req, res) => {
+const loginAssemblypointstaffController = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
-  console.log(email, password);
   // check if user exists or not
   const findUser = await User.findOne({ email });
+  if (findUser.role !== "assembly point staff")
+  throw new Error("You are not an assembly point staff");
+  if (
+    findUser &&
+    findUser.role !== "null" &&
+    (await findUser.isPasswordMatched(password))
+  ) {
+    const refreshToken = await generateRefreshToken(findUser?._id);
+    const updateUser = await User.findByIdAndUpdate(
+      findUser?._id,
+      {
+        refreshToken,
+      },
+      { new: true }
+    );
+    res.cookie("refreshToken", refreshToken, {
+      httpOnly: true,
+      maxAge: 72 * 60 * 60 * 1000,
+    });
+    res.json({
+      _id: findUser?._id,
+      userName: findUser?.userName,
+      email: findUser?.email,
+      phone: findUser?.phone,
+      role: findUser?.role,
+      address: findUser?.address,
+      token: generateToken(findUser?._id),
+      createdAt: findUser?.createdAt,
+    });
+  } else {
+    // Invalid Credentials
+    throw new Error("Invalid Email or Password");
+  }
+});
+
+const loginTransactionpointstaffController = asyncHandler(async (req, res) => {
+  const { email, password } = req.body;
+  // check if user exists or not
+  const findUser = await User.findOne({ email });
+  if (findUser.role !== "transaction point staff")
+  throw new Error("You are not an transaction point staff");
   if (
     findUser &&
     findUser.role !== "null" &&
@@ -354,7 +390,8 @@ const updateUserStatus = asyncHandler(async (req, res, next) => {
 module.exports = {
   registerUser,
   registerLeader,
-  loginUserController,
+  loginTransactionpointstaffController,
+  loginAssemblypointstaffController,
   loginAdminController,
   loginGatheringPointLeaderController,
   loginHeadOfTransactionPointController,
