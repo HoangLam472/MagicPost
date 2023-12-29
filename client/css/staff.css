@@ -62,14 +62,15 @@ input{
     color: #1253a3;
 }
 .icon--user{
-    position: absolute;
+    /* position: absolute; */
     font-size: 14px;
     margin-right: 5px;
-    right: 10%;
+    /* left: 5%; */
+  margin-right: 5px;
 }
 .staff__header--text{
-    position: absolute;
-    right: 6%;
+    /* position: absolute; */
+    /* left: 20%; */
     font-size: 18px;
     margin-right: 5px;
 }
@@ -79,6 +80,26 @@ input{
     font-size: 14px;
     margin-top: 2px;
     cursor: pointer;
+}
+.header__user{
+    position: absolute;
+    right: 13%;
+    /* top: 50%; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-right: 20px;
+}
+.sign_out{
+    color: #FFF;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    /* background-color: #ccc; */
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    right: 3%;
 }
 .list__1 {
     display: none;
@@ -236,7 +257,7 @@ select:focus, textarea:focus, input:focus{
     width: 30%;
 }
 .form__box2--2-width h3,.form__box2--2-high h3{
-    color: #f7f7f7;
+    color: #FFF;
 }
 
 .form__box--title{
@@ -287,6 +308,9 @@ form{
     margin-left: 50%;
     transform: translateX(-50%);
 }
+.product-sign{
+    display: none;
+}
 @media print{
   .staff__leftbar, .staff__header{
     display: none;
@@ -302,13 +326,17 @@ form{
     }
     .staff__form--box1,.staff__form--box2,.staff__form--box3{
         width: 100%;
+        margin-top: -10px;
     }
     .staff__form--box3{
        
-        /* padding-bottom: 50px; */
+        padding-bottom: 62px;
     }
-    .print, button{
+    .print, button, .form__box3--status{
         display: none;
     }
-    
+    .product-sign{
+        display: block;
+        transform: translate(200px,-10px);
+    }
 }

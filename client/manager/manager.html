@@ -16,35 +16,40 @@
                     MagicPost
                 </h1>
                 <span class="list__1--title" id="list__1--title">Quản lý nhân viên </span>
-                <span class="icon--angle" id="list__1--icon"><i class="fa-solid fa-angle-down"></i></span>
-                <ul class="list__1">
+                <!-- <span class="icon--angle" id="list__1--icon"><i class="fa-solid fa-angle-down"></i></span> -->
+                <!-- <ul class="list__1">
                     <li class="list__1--items">
                         <span id="list__1--items-title1">Danh sách nhân viên</span>
                     <li class="list__1--items">
                         <span id="list__1--items-title2">Thêm nhân viên</span>   
                     </li>
-                </ul>
+                </ul> -->
                 <ul class="list__2">
                     <span class="list__2--title">Thống kê </span>
-                    <span class="icon--angle"><i class="fa-solid fa-angle-down"></i></span>
+                    <!-- <span class="icon--angle"><i class="fa-solid fa-angle-down"></i></span> -->
                 </ul>
 
             </div>
             <div class="manager__container--box">
                 <div class="manager__header">
                     <div class="icon--menu"><i class="fa-solid fa-bars"></i></div>
-                    <input type="text" placeholder="Search for...">
-                    <div class="icon--seach"><i class="fa-solid fa-magnifying-glass"></i></div>
-                    <div class="icon--user"><i class="fa-solid fa-user"></i></div>
-                    <h2 class="manager__header--text">manager</h2>
-                    <div class="icon--angle"><i class="fa-solid fa-angle-down"></i></div>
+                    <!-- <input type="text" placeholder="Search for...">
+                    <div class="icon--seach"><i class="fa-solid fa-magnifying-glass"></i></div> -->
+                    <div class="header__user">
+                        <div class="icon--user"><i class="fa-solid fa-user"></i></div>
+                        <h2 class="manager__header--text">Manager</h2>
+                    </div>
+                   
+                    <!-- <div class="icon--angle"><i class="fa-solid fa-angle-down"></i></div> -->
+                    <div class="sign_out"> <a href="../index.html">Đăng xuất</a></div>
                 </div>
                 <div class="manager__main">
-                    <button href="#" class="btn s-full-width js-buy-ticket">Them nhan vien</button>
+                    <button href="#" class="btn s-full-width js-buy-ticket none" id="btn--add">Thêm nhân viên</button>
                     <table class="table1 none" id="table1"  collapse;>
                         <thead>
                             <tr>
                                 <th>STT</th>
+                                <th>Mã nhân viên</th>
                                 <th>Họ và tên</th>
                                 <th>Email</th>
                                 <th>Số điện thoại</th>
@@ -57,6 +62,7 @@
                             <tr>
                                 <td>1</td>
                                 <td>253367747</td>
+                                <td>hdhd kkd</td>
                                 <td>45 kg</td>
                                 <td>1.2 m</td>
                                 <td>0.5 m</td>
@@ -69,7 +75,7 @@
                     <table class="table1 none" id="table2"  collapse;>
                         <thead>
                             <tr>
-                                <th>STT</th>
+                                <th>Mã NV</th>
                                 <th>Họ và tên</th>
                                 <th>Email</th>
                                 <th>Số điện thoại</th>
@@ -89,6 +95,33 @@
                         </tbody>
                         <tfoot></tfoot>
                     </table>
+                    <div    id="change__background">
+                        <form action="#" class="form__create--user none" id="form__create--user">
+                            <div class="form__close" id="form__close"><i class="fa-solid fa-x"></i></div>
+                            <Label>
+                                <span>Mã nhân viên</span>
+                                <input type="text">
+                            </Label>
+                            <Label>
+                                <span>Họ và tên</span>
+                                <input type="text">
+                            </Label>
+                            <Label>
+                                <span>Email</span>
+                                <input type="text">
+                            </Label>
+                            <Label>
+                                <span>Số điện thoại</span>
+                                <input type="text">
+                            </Label>
+                            <Label>
+                                <span>Địa chỉ</span>
+                                <input type="text">
+                            </Label>
+                            <button>Xác nhận</button>
+                        </form>
+                    </div>
+                   
                 </div>
             </div>
             
