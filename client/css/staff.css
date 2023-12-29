@@ -147,7 +147,8 @@ input{
 
 td, tr, th{
     color: #0e0505;
-    border: 1px solid #181717;
+    border: 1px solid #DDE2E8;
+    background-color: #FFF;
     text-align: center;
 }
 tr:hover{
@@ -309,6 +310,89 @@ form{
     transform: translateX(-50%);
 }
 .product-sign{
+    display: none;
+}
+.form__create--oder{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    background-color: #FFF;
+    padding: 50px 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+label{
+    width: 320px;
+    margin: 5px;
+}
+label span{
+    color: #181717;
+    
+}
+.form__create--oder input,.form__create--oder select {
+    float: right;
+    height: 34px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid #DDE2E8;
+    margin-bottom: 10px;
+}
+.form__create--oder button{
+    height: 34px;
+    width: 100%;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid #DDE2E8;
+    margin: 10px auto;
+ 
+    background: #1253a3;
+    cursor: pointer;
+}
+.form__close i{
+    color: #0b202d;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    margin-bottom: 100px;
+}
+.none{
+    display: none;
+}
+.change__background{
+    background-color: #1615155a;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+table select, table button{
+    margin: 0;
+    padding: 0;
+}
+table select{
+    width: 200px;
+    cursor: pointer;
+    color: #31708f;
+    
+}
+option{
+    cursor: pointer;
+    color: #31708f;
+}
+th{
+    color: #73879c;
+    padding: 5px;
+}
+td{
+    color: #31708f;
+}
+.none{
     display: none;
 }
 @media print{

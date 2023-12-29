@@ -43,3 +43,41 @@ function showForm() {
     // printWindow.print();
     print();
   }
+  document.getElementById("list__1--items-title1").addEventListener('click',function(){
+    var form = document.getElementById("staff__form");
+    form.classList.add("none");
+    var form1 = document.getElementById("form__create--oder");
+    document.getElementById("change__background").classList.add("change__background");
+    form1.classList.remove("none");
+    var table1 = document.getElementById("table1");
+    table1.classList.add("none");
+    var table2 = document.getElementById("table2");
+  
+    table2.classList.add("none");
+});
+document.getElementById("form__close").addEventListener('click',function(){
+  
+    var form1 = document.getElementById("form__create--oder");
+    document.getElementById("change__background").classList.remove("change__background");
+    form1.classList.add("none");
+    
+});
+document.getElementById("list__1--items-title3").addEventListener('click',function(){
+  var form = document.getElementById("staff__form");
+  form.classList.add("none");
+  var table1 = document.getElementById("table1");
+
+  table1.classList.remove("none");
+  var table2 = document.getElementById("table2");
+
+  table2.classList.add("none");
+});
+document.getElementById("list__1--items-title4").addEventListener('click',function(){
+  var form = document.getElementById("staff__form");
+  form.classList.add("none");
+  var table1 = document.getElementById("table1");
+  table1.classList.add("none");
+  var table2 = document.getElementById("table2");
+
+  table2.classList.remove("none");
+});

@@ -24,14 +24,14 @@
             ><i class="fa-solid fa-angle-down"></i
           ></span>
           <ul class="list__1">
-            <li class="list__1--items">
+            <li class="list__1--items" id="order-recognition" onclick="showForm()">
               <span>Ghi nhận đơn hàng</span>
               <!-- <span class="icon--angle"
                 ><i class="fa-solid fa-angle-down"></i
               ></span> -->
             </li>
             <li class="list__1--items">
-              <span id="list__1--items-title1" onclick="showForm()">Tạo đơn hàng</span>
+              <span id="list__1--items-title1" >Tạo đơn hàng</span>
               <!-- <span class="icon--angle" id="list__1--items-icon1"
                 ><i class="fa-solid fa-angle-down"></i
               ></span>
@@ -43,6 +43,14 @@
                   Tới khách hàng
                 </li>
               </ul> -->
+            </li>
+            <li class="list__1--items">
+              <span id="list__1--items-title3" >Hàng chuyển đến</span>
+              
+            </li>
+            <li class="list__1--items">
+              <span id="list__1--items-title4" >Hàng chuyển đi</span>
+              
             </li>
             <li class="list__1--items">
               <span id="list__1--items-title2">Đơn hàng</span>
@@ -80,32 +88,62 @@
             <div class="sign_out"> <a href="../index.html">Đăng xuất</a></div>
           </div>
           <div class="staff__main">
-            <!-- <table class="table1 none" id="table1"  collapse;>
+            <table class="table1 none" id="table1"  collapse;>
                         <thead>
                             <tr>
-                                <th>STT</th>
-                                <th>Mã đơn hàng</th>
-                                <th>Cân nặng</th>
-                                <th>Chiều dài</th>
-                                <th>Chiều rộng</th>
-                                <th>Điểm giao dịch</th>
-                                <th>Điểm tập kết</th>
+                                <th style="width: 50px">STT</th>
+                                <th style="width: 150px">Mã đơn hàng</th>
+                                <th style="width: 200px;">Trạng thái</th>
+                                <th >Đến từ</th>
+                                <th style="width: 120px; " ></th>
+                               
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
                                 <td>253367747</td>
-                                <td>45 kg</td>
+                                <td style="padding: 3px 10px;"> <select name="" id="bill-status">
+                                  <option value="Chưa giao">Giao thất bại</option>
+                                  <option value="Đã giao">Đã giao</option>
+                                  <option value="Giao thành công">Giao thành công</option>
+                                </select></td>
                                 <td>1.2 m</td>
-                                <td>0.5 m</td>
-                                <td>Điểm giao dịch Trần Duy Hưng</td>
-                                <td>Kho Đình Thôn</td>
+                               <td style="padding: 3px 10px;"> <button>Xác nhận</button> </td>
+                               
                             </tr>
                            
                         </tbody>
                         <tfoot></tfoot>
-                    </table> -->
+                    </table>
+                    <table class="table2 none" id="table2"  collapse;>
+                      <thead>
+                        <tr>
+                            <th style="width: 50px">STT</th>
+                            <th style="width: 150px">Mã đơn hàng</th>
+                            <th style="width: 200px;">Trạng thái</th>
+                            <th >Chuyển đến</th>
+                            <th style="width: 120px; " ></th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>253367747</td>
+                            <td style="padding: 3px 10px;"> <select name="" id="bill-status">
+                              <option value="Chưa giao">Giao thất bại</option>
+                              <option value="Đã giao">Đã giao</option>
+                              <option value="Giao thành công">Giao thành công</option>
+                            </select></td>
+                            <td>1.2 m</td>
+                           <td style="padding: 3px 10px;"> <button>Xác nhận</button> </td>
+                           
+                        </tr>
+                       
+                    </tbody>
+                    <tfoot></tfoot>
+                  </table>
             <form class="staff__form none" id="staff__form">
               <div class="staff__form--box1">
                 <div class="box1--Sender">
@@ -293,6 +331,29 @@
 
               </div>
             </form>
+            <div id="change__background">
+              <form action="#" class="form__create--oder none" id="form__create--oder">
+                  <div class="form__close" id="form__close"><i class="fa-solid fa-x"></i></div>
+                  <Label>
+                      <span>Mã đơn hàng</span>
+                      <input type="text">
+                  </Label>
+                  <Label style="display: flex;">
+                      <span style=" width: 235px;">Trạng thái</span>
+                      <select name="" id="bill-status">
+                        <option value="Chưa giao">Chưa giao</option>
+                        <option value="Đã giao">Đã giao</option>
+                        <option value="Giao thành công">Giao thành công</option>
+                      </select>
+                  </Label>
+                  <Label>
+                      <span>Chuyển tới</span>
+                      <input type="text">
+                  </Label>
+                 
+                  <button>Xác nhận</button>
+              </form>
+          </div>
           </div>
         </div>
       </div>
