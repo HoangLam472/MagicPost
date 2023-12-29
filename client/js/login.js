@@ -30,9 +30,12 @@ function validateForm() {
 function login_staff (username, password, role) {
     const login_url = role === 'admin'
         ? `${config.API_URL}/api/user/admin` 
-            : (role === 'leader' 
-                ? `${config.API_URL}/api/user/gathering-point-leader` 
-                : `${config.API_URL}/api/user/login`)
+            : (role === 'head-leader')
+                ? `${config.API_URL}/api/user/head-of-transaction-point`
+                : (role === 'leader' 
+                    ? `${config.API_URL}/api/user/gathering-point-leader` 
+                        : (role === 'transaction') ? `${config.API_URL}/api/user/login-Transactionpointstaff` 
+                        : `${config.API_URL}/api/user/login-Assemblypointstaff`)
     fetch(login_url, {
         method: 'POST',
         headers: {
@@ -61,7 +64,11 @@ function login_staff (username, password, role) {
             } else if (role === "gathering point leader") {
                 window.open("./manager/manager.html", "_self");
             } else if (role === "assembly point staff") {
+                window.open("./staff/staff1.html", "_self");
+            } else if (role === "transaction point staff") {
                 window.open("./staff/staff.html", "_self");
+            } else if (role === "head of transaction point") {
+                window.open("./manager/manager1.html", "_self");
             }
         }
     })
