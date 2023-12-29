@@ -11,6 +11,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   
   </head>
   <body>
     <div class="manager">
@@ -29,7 +31,7 @@
                     </li>
                 </ul> -->
           <ul class="list__2">
-            <span class="list__2--title">Thống kê </span>
+            <span class="list__2--title" id="list__2--title">Thống kê </span>
             <!-- <span class="icon--angle"><i class="fa-solid fa-angle-down"></i></span> -->
           </ul>
         </div>
@@ -119,6 +121,7 @@
                 <button id="btn-admin">Xác nhận</button>
               </form>
             </div>
+            <div id="piechart" class="piechart"  style="width: 100%; height: calc(100vh - 100px);"></div>
           </div>
         </div>
       </div>
