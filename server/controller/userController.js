@@ -3,6 +3,7 @@ const Point = require("../models/pointModel");
 const asyncHandler = require("express-async-handler");
 const { generateToken } = require("../config/jwtToken");
 
+const Mongoose = require("mongoose");
 const { Error } = require("mongoose");
 
 const validateMongoDbId = require("../utils/validateMongodbid");
@@ -15,20 +16,23 @@ const { generateRefreshToken } = require("../config/refreshtoken");
 // Register Staff
 const registerUser = asyncHandler(async (req, res) => {
   const email = req.body.email;
-  const { id } = req.params;
-  const findUser = await User.findOne({ email });
-  const findPoint = await Point.findOne({ _id: id });
-  console.log(findUser, findPoint);
-  if (!findUser && findPoint) {
-    // Create a new user
-    const newUser = await User.create({
-      ...req.body,
-      postOfficeId: id,
-    });
-    res.json(newUser);
-  } else {
-    // User already exists
-    throw new Error("User Already Exists");
+  const id  = req.params.id;
+  try {
+    const findUser = await User.findOne({ email });
+    const findPoint = await Point.findOne({ _id: new Mongoose.Types.ObjectId(id) });
+    if (!findUser && findPoint) {
+      // Create a new user
+      const newUser = await User.create({
+        ...req.body,
+        postOfficeId: id,
+      });
+      res.json(newUser);
+    } else {
+      // User already exists
+      throw new Error("User Already Exists");
+    }
+  } catch(err) {
+    console.log(err);
   }
 });
 
