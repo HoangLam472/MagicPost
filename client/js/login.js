@@ -1,3 +1,5 @@
+import {config} from '../config.js'
+
 const form = {
     username: document.querySelector("#username"),
     password: document.querySelector("#pass"),
@@ -27,10 +29,10 @@ function validateForm() {
 
 function login_staff (username, password, role) {
     const login_url = role === 'admin'
-        ? 'http://localhost:8080/api/user/admin' 
+        ? `${config.API_URL}/api/user/admin` 
             : (role === 'leader' 
-                ? 'http://localhost:8080/api/user/gathering-point-leader' 
-                : 'http://localhost:8080/api/user/login')
+                ? `${config.API_URL}/api/user/gathering-point-leader` 
+                : `${config.API_URL}/api/user/login`)
     fetch(login_url, {
         method: 'POST',
         headers: {

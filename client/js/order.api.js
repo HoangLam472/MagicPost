@@ -1,3 +1,5 @@
+import {config} from '../config.js'
+
 const order = {
     senderName: document.querySelector("#oder-username"),
     senderNumber: document.querySelector("#order-phone"),
@@ -74,7 +76,7 @@ function validateForm() {
 }
 
 function create_order (order) {
-    const url = 'http://localhost:8080/api/order';
+    const url = `${config.API_URL}/api/order`;
     fetch(url, {
         method: 'POST',
         headers: {
@@ -96,3 +98,73 @@ function create_order (order) {
         }
     })
 };
+
+function get_all_order () {
+    const url = `${config.API_URL}/api/order`;
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+        }
+    }).then((res) => {
+        if (!res.ok) {
+            console.log("Lỗi");
+        } else {
+            return res.json();
+        }
+    }).then((data) => {
+        if (!data) {
+            console.log('Lỗi');
+        } else {
+            console.log(data);
+        }
+    })
+}
+
+function get_order_by_id (id) {
+    const url = `${config.API_URL}/api/order/${id}`;
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+        }
+    }).then((res) => {
+        if (!res.ok) {
+            console.log("Lỗi");
+        } else {
+            return res.json();
+        }
+    }).then((data) => {
+        if (!data) {
+            console.log('Lỗi');
+        } else {
+            console.log(data);
+        }
+    })
+}
+
+function update_status (order_id, order_status) {
+    const url = `${config.API_URL}/api/order/update`;
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({orderId: order_id, orderStatus: order_status})
+    }).then((res) => {
+        if (!res.ok) {
+            console.log("Lỗi");
+        } else {
+            return res.json();
+        }
+    }).then((data) => {
+        if (!data) {
+            console.log('Lỗi');
+        } else {
+            console.log(data);
+        }
+    })
+}
