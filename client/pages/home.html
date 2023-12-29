@@ -24,16 +24,16 @@
     <div class="home">
         <img src="../assets/img/home.jpg" alt="" class="img__home">
     </div>
-    <form action="#" class="form">
+    <form class="form">
         <div class="form__container">
-            <input type="text" placeholder="Nhập mã đơn hàng">
+            <input id="search_id" type="text" placeholder="Nhập mã đơn hàng">
             
             <button type="submit" id="home__search">Tra cứu</button>
             
         </div>
     </form>
     <div id="change__background--home">
-        <form action="#" class="staff__form none form__home" id="form__home">
+        <form aria-disabled="true" class="staff__form none form__home" id="form__home">
           <div class="form__close form__close--home" id="form__close--home">
             <i class="fa-solid fa-x"></i>
           </div>
@@ -51,6 +51,7 @@
                     type="text"
                     id="oder-username-home"
                     placeholder="Họ tên" 
+                    disabled
                   />
                 </div>
                 <div class="form__box1--1-phone">
@@ -62,6 +63,7 @@
                     type="text"
                     id="order-phone-home"
                     placeholder="Điện thoại người gửi"
+                    disabled
                   />
                 </div>
               </div>
@@ -75,6 +77,7 @@
                   type="text"
                   style="width: 100%"
                   placeholder="Địa chỉ người gửi"
+                  disabled
                 />
               </div>
             </div>
@@ -91,6 +94,7 @@
                     id="recieve-phone-home"
                     type="text"
                     placeholder="Số điện thoại"
+                    disabled
                   />
                 </div>
                 <div class="form__box1--2-user">
@@ -102,6 +106,7 @@
                     id="recieve-name-home"
                     type="text"
                     placeholder="Họ tên"
+                    disabled
                   />
                 </div>
               </div>
@@ -115,6 +120,7 @@
                   type="text"
                   style="width: 100%"
                   placeholder="Địa chỉ người nhận"
+                  disabled
                 />
               </div>
             </div>
@@ -132,6 +138,7 @@
                 type="text"
                 style="width: 100%"
                 placeholder="Tên sản phẩm"
+                disabled
               />
             </div>
             <div class="form__box2--1">
@@ -145,6 +152,7 @@
                   type="text"
                   style="width: 98%"
                   placeholder="vnd"
+                  disabled
                 />
               </div>
               <div class="form__box2--1-mass">
@@ -157,6 +165,7 @@
                   type="text"
                   style="width: 98%"
                   placeholder="gram"
+                  disabled
                 />
               </div>
               <div class="form__box2--1-quantity">
@@ -169,6 +178,7 @@
                   type="text"
                   placeholder=""
                   style="width: 100%"
+                  disabled
                 />
               </div>
             </div>
@@ -183,6 +193,7 @@
                   type="text"
                   placeholder="Dài(cm)"
                   style="width: 100%"
+                  disabled
                 />
               </div>
               <div class="form__box2--2-width">
@@ -195,6 +206,7 @@
                   type="text"
                   placeholder="Rộng(cm)"
                   style="width: 100%"
+                  disabled
                 />
               </div>
               <div class="form__box2--2-high">
@@ -207,6 +219,7 @@
                   type="text"
                   placeholder="Cao(cm)"
                   style="width: 100%"
+                  disabled
                 />
               </div>
             </div>
@@ -217,6 +230,7 @@
                 id="order-note-home"
                 cols="30"
                 rows="4"
+                disabled
               ></textarea>
             </div>
           </div>
@@ -232,6 +246,7 @@
                 type="text"
                 id="order-code-home"
                 placeholder="Mã"
+                disabled
               />
             </div>
             <div class="form__box3--status">
@@ -239,7 +254,8 @@
                 <h3>Tình trạng vận chuyển</h3>
                 <!-- <span class="important">*</span> -->
               </div>
-              <select name="" id="bill-status-home">
+              <select name="" id="bill-status-home" disabled>
+                <option value="Đang vận chuyển">Đang vận chuyển</option>
                 <option value="Chưa giao">Giao thất bại</option>
                 <option value="Đã giao">Đã giao</option>
                 <option value="Giao thành công">Giao thành công</option>
@@ -247,7 +263,7 @@
             </div>
             <div class="form__box3--customercheck">
               <div style="display: flex; margin-top: 20px">
-                <input type="checkbox" name="" id="cho-xem-home" />
+                <input type="checkbox" name="" id="cho-xem-home" disabled />
                 <h3 style="margin-top: 8px">Cho khách xem hàng</h3>
               </div>
             </div>
@@ -280,6 +296,6 @@
           </div>
         </form>
       </div>
-      <script src="../js/home.js"></script>
+      <script  type="module" src="../js/home.js"></script>
 </body>
 </html>
