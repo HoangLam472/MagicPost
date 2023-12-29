@@ -33,67 +33,115 @@
             <div class="manager__container--box">
                 <div class="manager__header">
                     <div class="icon--menu"><i class="fa-solid fa-bars"></i></div>
-                    <input type="text" placeholder="Search for...">
-                    <div class="icon--seach"><i class="fa-solid fa-magnifying-glass"></i></div>
-                    <div class="icon--user"><i class="fa-solid fa-user"></i></div>
-                    <h2 class="manager__header--text">manager</h2>
-                    <div class="icon--angle"><i class="fa-solid fa-angle-down"></i></div>
+                    <div class="header-right">
+                        <input type="text" placeholder="Search for...">
+                        <div class="icon--seach"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <div class="icon--user"><i class="fa-solid fa-user"></i></div>
+                        <h2 class="manager__header--text">manager</h2>
+                        <div class="icon--angle"><i class="fa-solid fa-angle-down"></i></div>
+                    </div>
                 </div>
                 <div class="manager__main">
-                    <button href="#" class="btn s-full-width js-buy-ticket">Them nhan vien</button>
-                    <table class="table1 none" id="table1"  collapse;>
-                        <thead>
-                            <tr>
-                                <th>STT</th>
-                                <th>Họ và tên</th>
-                                <th>Email</th>
-                                <th>Số điện thoại</th>
-                                <th>Địa chỉ</th>
-                                <th></th>
+                    <div id="table1" class="table1 none">
+                        <button id="update-list-user" class="btn s-full-width js-buy-ticket">Cập nhật</button>
+                        <table id="tb-danh-sach-nhan-vien" collapse;>
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Họ và tên</th>
+                                    <th>Email</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Xóa</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>253367747</td>
+                                    <td>45 kg</td>
+                                    <td>1.2 m</td>
+                                    <td>0.5 m</td>
+                                    <td><input type="button" value="Delete" onclick="SomeDeleteRowFunction(this)"></td>
+                                </tr>
                                 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>253367747</td>
-                                <td>45 kg</td>
-                                <td>1.2 m</td>
-                                <td>0.5 m</td>
-                                <td><input type="button" value="Delete" onclick="SomeDeleteRowFunction(this)"></td>
-                            </tr>
-                            
-                        </tbody>
-                        <tfoot></tfoot>
-                    </table>
-                    <table class="table1 none" id="table2"  collapse;>
-                        <thead>
-                            <tr>
-                                <th>STT</th>
-                                <th>Họ và tên</th>
-                                <th>Email</th>
-                                <th>Số điện thoại</th>
-                                <th>Địa chỉ</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>LAM</td>
-                                <td>LAM</td>
-                                <td>1.2 m</td>
-                                <td>0.5 m</td>
-                            </tr>
-                            
-                        </tbody>
-                        <tfoot></tfoot>
-                    </table>
+                            </tbody>
+                            <tfoot></tfoot>
+                        </table>
+                    </div>
+                    <div class="table1 none" id="table2">
+                        <button id="add-user-btn" class="btn s-full-width js-buy-ticket">Thêm nhân viên</button>
+                        <table collapse;>
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Họ và tên</th>
+                                    <th>Email</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Địa chỉ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>LAM</td>
+                                    <td>LAM</td>
+                                    <td>1.2 m</td>
+                                    <td>0.5 m</td>
+                                </tr>
+                                
+                            </tbody>
+                            <tfoot></tfoot>
+                        </table>
+
+                        <div id="myModal" class="modal">
+
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                              <span class="close">&times;</span>
+                              <h3>Thêm nhân viên</h3>
+                              <form>
+                                <div class="txt_field">
+                                    <select name="option" id="point-option"></select>
+                                    <div>
+                                        <input type="text" id="add-username" required />
+                                        <span></span>
+                                        <label>Username</label>
+                                    </div>
+                                    <div>
+                                        <input type="text" id="add-email" required />
+                                        <span></span>
+                                        <label>Email</label>
+                                    </div>
+                                    <div>
+                                        <input type="text" id="add-address" required />
+                                        <span></span>
+                                        <label>Address</label>
+                                    </div>
+                                    <div>
+                                        <input type="text" id="add-phone" required />
+                                        <span></span>
+                                        <label>Phone</label>
+                                    </div>
+                                    <div>
+                                        <input type="text" id="add-password" required />
+                                        <span></span>
+                                        <label>Password</label>
+                                    </div>
+                                </div>
+                              </form>
+                              <button id="add-user">Thêm</button>
+                            </div>
+                          
+                          </div>
+                    </div>
                 </div>
             </div>
             
         </div>
     </div>
     <script src="../js/manager.js"></script>
+    <script type="module" src="../js/point.api.js"></script>
 </body>
 </html>
