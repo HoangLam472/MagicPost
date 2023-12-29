@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MagicPost</title>
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/manager11.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="manager1">
+        <div class="manager1__container">
+            <div class="manager1__leftbar">
+                <h1 class="manager1__leftbar--title">
+                    MagicPost
+                </h1>
+                <span class="list__1--title" id="list__1--title">Quản lý nhân viên </span>
+                <!-- <span class="icon--angle" id="list__1--icon"><i class="fa-solid fa-angle-down"></i></span> -->
+                <!-- <ul class="list__1">
+                    <li class="list__1--items">
+                        <span id="list__1--items-title1">Danh sách nhân viên</span>
+                    <li class="list__1--items">
+                        <span id="list__1--items-title2">Thêm nhân viên</span>   
+                    </li>
+                </ul> -->
+                <ul class="list__2">
+                    <span class="list__2--title">Thống kê </span>
+                    <!-- <span class="icon--angle"><i class="fa-solid fa-angle-down"></i></span> -->
+                </ul>
+
+            </div>
+            <div class="manager1__container--box">
+                <div class="manager1__header">
+                    <div class="icon--menu"><i class="fa-solid fa-bars"></i></div>
+                    <!-- <input type="text" placeholder="Search for...">
+                    <div class="icon--seach"><i class="fa-solid fa-magnifying-glass"></i></div> -->
+                    <div class="header__user">
+                        <div class="icon--user"><i class="fa-solid fa-user"></i></div>
+                        <h2 class="manager1__header--text">manager1</h2>
+                    </div>
+                   
+                    <!-- <div class="icon--angle"><i class="fa-solid fa-angle-down"></i></div> -->
+                    <div class="sign_out"> <a href="../index.html">Đăng xuất</a></div>
+                </div>
+                <div class="manager1__main">
+                    <div id="table1" class="table1 none">
+                        <button id="update-list-user" class="btn s-full-width js-buy-ticket">Cập nhật</button>
+                        <table id="tb-danh-sach-nhan-vien" collapse;>
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Họ và tên</th>
+                                    <th>Email</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Xóa</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>253367747</td>
+                                    <td>45 kg</td>
+                                    <td>1.2 m</td>
+                                    <td>0.5 m</td>
+                                    <td><input type="button" value="Delete" onclick="SomeDeleteRowFunction(this)"></td>
+                                </tr>
+                                
+                            </tbody>
+                            <tfoot></tfoot>
+                        </table>
+                    </div>
+                    <div class="table1 none" id="table2">
+                        <button id="add-user-btn" class="btn s-full-width js-buy-ticket">Thêm nhân viên</button>
+                        <table collapse;>
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Họ và tên</th>
+                                    <th>Email</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Địa chỉ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>LAM</td>
+                                    <td>LAM</td>
+                                    <td>1.2 m</td>
+                                    <td>0.5 m</td>
+                                </tr>
+                                
+                            </tbody>
+                            <tfoot></tfoot>
+                        </table>
+
+                        <div id="myModal" class="modal">
+
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                              <span class="close">&times;</span>
+                              <h3>Thêm nhân viên</h3>
+                              <form>
+                                <div class="txt_field">
+                                    <select name="option" id="point-option"></select>
+                                    <div>
+                                        <input type="text" id="add-username" required />
+                                        <span></span>
+                                        <label>Username</label>
+                                    </div>
+                                    <div>
+                                        <input type="text" id="add-email" required />
+                                        <span></span>
+                                        <label>Email</label>
+                                    </div>
+                                    <div>
+                                        <input type="text" id="add-address" required />
+                                        <span></span>
+                                        <label>Address</label>
+                                    </div>
+                                    <div>
+                                        <input type="text" id="add-phone" required />
+                                        <span></span>
+                                        <label>Phone</label>
+                                    </div>
+                                    <div>
+                                        <input type="text" id="add-password" required />
+                                        <span></span>
+                                        <label>Password</label>
+                                    </div>
+                                </div>
+                              </form>
+                              <button id="add-user">Thêm</button>
+                            </div>
+                          
+                          </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="../js/manager1.js"></script>
+    <script type="module" src="../js/point.api.js"></script>
+</body>
+</html>
