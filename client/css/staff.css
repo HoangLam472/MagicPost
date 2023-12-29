@@ -407,6 +407,10 @@ button:hover{
     color: #FFF;
     transition: all 0.2s ease;
 }
+
+.piechart{
+    display: block;
+}
 .none{
     display: none;
 }

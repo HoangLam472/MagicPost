@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/manager.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+   
 </head>
 <body>
     <div class="manager">
@@ -15,6 +18,11 @@
                 <h1 class="manager__leftbar--title">
                     MagicPost
                 </h1>
+                <ul class="list__2">
+                    <span class="list__2--title" id="list__2--title">Thống kê </span>
+                    <!-- <span class="icon--angle"><i class="fa-solid fa-angle-down"></i></span> -->
+                </ul>
+
                 <span class="list__1--title" id="list__1--title">Quản lý nhân viên </span>
                 <!-- <span class="icon--angle" id="list__1--icon"><i class="fa-solid fa-angle-down"></i></span> -->
                 <!-- <ul class="list__1">
@@ -24,11 +32,7 @@
                         <span id="list__1--items-title2">Thêm nhân viên</span>   
                     </li>
                 </ul> -->
-                <ul class="list__2">
-                    <span class="list__2--title">Thống kê </span>
-                    <!-- <span class="icon--angle"><i class="fa-solid fa-angle-down"></i></span> -->
-                </ul>
-
+                
             </div>
             <div class="manager__container--box">
                 <div class="manager__header">
@@ -59,14 +63,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>253367747</td>
-                                    <td>45 kg</td>
-                                    <td>1.2 m</td>
-                                    <td>0.5 m</td>
+                                <!-- <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td><input type="button" value="Delete" onclick="SomeDeleteRowFunction(this)"></td>
-                                </tr>
+                                </tr> -->
                                 
                             </tbody>
                             <tfoot></tfoot>
@@ -138,6 +142,9 @@
                           
                           </div>
                     </div>
+                   
+
+                    <div id="piechart-manager" class="piechart   "  style="width: calc(100vw -140px); height: calc(100vh - 140px);"></div>
                 </div>
             </div>
             

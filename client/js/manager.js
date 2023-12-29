@@ -8,10 +8,8 @@
 //     list1.classList.toggle("show");
 // });
 document.getElementById("list__1--title").addEventListener('click',function(){
-    var table1 = document.getElementById("table1");
-    document.getElementById("btn--add").classList.remove("none");
-    table2.classList.add ("none");
-    table1.classList.remove("none");
+   document.getElementById("table1").classList.remove("none");
+   document.getElementById("piechart-manager").classList.add("none");
 });
 
 // document.getElementById("list__1--items-title2").addEventListener('click',function(){
@@ -19,16 +17,16 @@ document.getElementById("list__1--title").addEventListener('click',function(){
 //     table1.classList.add ("none")
 //     table2.classList.remove("none");
 // });
-document.getElementById("btn--add").addEventListener('click',function(){
-    var form1 = document.getElementById("form__create--user");
-    document.getElementById("change__background").classList.add("change__background");
-    form1.classList.remove("none");
-});
-document.getElementById("form__close").addEventListener('click',function(){
-    var form1 = document.getElementById("form__create--user");
-    document.getElementById("change__background").classList.remove("change__background");
-    form1.classList.add("none");
-});
+// document.getElementById("btn--add").addEventListener('click',function(){
+//     var form1 = document.getElementById("form__create--user");
+//     document.getElementById("change__background").classList.add("change__background");
+//     form1.classList.remove("none");
+// });
+// document.getElementById("form__close").addEventListener('click',function(){
+//     var form1 = document.getElementById("form__create--user");
+//     document.getElementById("change__background").classList.remove("change__background");
+//     form1.classList.add("none");
+// });
 
 var modal = document.getElementById("myModal");
 
@@ -62,4 +60,33 @@ function SomeDeleteRowFunction(o) {
    }
 
 
+   document.getElementById("list__2--title").addEventListener('click',function(){
+    document.getElementById("piechart-manager").classList.remove("none");
+    var table1 = document.getElementById("table1")
+    table1.classList.add("none");
 
+  });
+
+
+
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['Task', 'Hours per Day'],
+    ['Thất bại',     50],
+    ['Đã giao',      250],
+    ['Thành công',  300],
+    
+  ]);
+
+  var options = {
+    title: 'Thống kê tình trạng giao hàng'
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart-manager'));
+
+  chart.draw(data, options);
+}

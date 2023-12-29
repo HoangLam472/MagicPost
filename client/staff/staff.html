@@ -10,18 +10,26 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   </head>
   <body>
     <div class="staff">
       <div class="staff__container">
         <div class="staff__leftbar">
           <h1 class="staff__leftbar--title">MagicPost</h1>
+          <ul class="list__2">
+            <span class="list__2--title" id="list__2--title">Thống kê </span>
+            <!-- <span class="icon--angle"
+              ><i class="fa-solid fa-angle-down"></i
+            ></span> -->
+          </ul>
           <span class="list__1--title" id="list__1--title"
             >Quản lý đơn hàng
           </span>
           <span class="icon--angle" id="list__1--icon"
             ><i class="fa-solid fa-angle-down"></i
           ></span>
+          
           <ul class="list__1">
             <li
               class="list__1--items"
@@ -64,12 +72,7 @@
               </ul> -->
             </li>
           </ul>
-          <ul class="list__2">
-            <span class="list__2--title">Thống kê </span>
-            <!-- <span class="icon--angle"
-              ><i class="fa-solid fa-angle-down"></i
-            ></span> -->
-          </ul>
+          
         </div>
         <div class="staff__container--box">
           <div class="staff__header">
@@ -369,13 +372,14 @@
                     <h3 style="margin-top: 8px">Cho khách xem hàng</h3>
                   </div>
                 </div>
-                <hr />
-                <!-- <div class="form__box3--battery">
+              
+                <div class="form__box3--battery">
                     <div style="display: flex">
                         <input type="checkbox" name="" id="chat-long">
                         <h3 style="margin-top: 8px;"> Hàng chất lỏng,pin sạc</h3>
                       </div>
-                </div> -->
+                </div>
+                <hr />
                 <button type="submit" id="create-order">Tạo bưu gửi</button>
                 <h3 class="print" id="print" onclick="printForm()">
                   In bưu gửi
@@ -674,7 +678,7 @@
                 </div>
               </form>
             </div>
-
+            <div id="piechart-staff" class="piechart  "  style="width: calc(100vw -140px); height: calc(100vh - 140px);"></div>
 
 
           </div>

@@ -195,6 +195,13 @@ label span{
     top: 0;
     left: 0;
 }
+
+
+/* .piechart{
+    width: 100vw; 
+    height: calc(100vh - 100px);
+    display: block;
+} */
 .none{
     display: none;
 }
