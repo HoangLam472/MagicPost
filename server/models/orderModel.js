@@ -3,12 +3,15 @@ const mongoose = require("mongoose"); // Erase if already required
 // Declare the Schema of the Mongo model
 // vd: pointName: điểm giao dịch
 // vd: pointAddress: vị trí cụ thể
-// vd: pointProvince: Hà Nội
+// vd: pointProvince: Hà Nội\
+
+
 var orderSchema = new mongoose.Schema(
   {
     createBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-    senderInfo: {
+    originalLocation: {
       type: String,
+      required: true,
     },
     senderName: {
       type: String,
@@ -78,26 +81,16 @@ var orderSchema = new mongoose.Schema(
       type: String,
     },
     orderLocation: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Point",
+      type: String,
+      required: true,
     },
     orderStatus: {
       type: String,
-      default: "Chờ lấy hàng",
+      default: "Đang vận chuyển",
       enum: [
-        "Chờ lấy hàng",
-        "Đã lấy hàng",
         "Đang vận chuyển",
-        "Chờ phát",
-        "Phát thành công",
-        "Phát không thành công",
-        "Chờ chuyển hoàn",
-        "Chuyển hoàn",
-        "Phát hoàn thành công",
-        "Chuyển tiếp",
-        "Vô thừa nhận",
-        "Đơn hàng hủy",
-        "Bồi thường",
+       "Chuyển thành công",
+       "Chuyển thất bại",
       ],
     },
     serviceTrans: {
