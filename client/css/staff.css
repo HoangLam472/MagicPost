@@ -62,14 +62,15 @@ input{
     color: #1253a3;
 }
 .icon--user{
-    position: absolute;
+    /* position: absolute; */
     font-size: 14px;
     margin-right: 5px;
-    right: 10%;
+    /* left: 5%; */
+  margin-right: 5px;
 }
 .staff__header--text{
-    position: absolute;
-    right: 6%;
+    /* position: absolute; */
+    /* left: 20%; */
     font-size: 18px;
     margin-right: 5px;
 }
@@ -79,6 +80,26 @@ input{
     font-size: 14px;
     margin-top: 2px;
     cursor: pointer;
+}
+.header__user{
+    position: absolute;
+    right: 13%;
+    /* top: 50%; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-right: 20px;
+}
+.sign_out{
+    color: #FFF;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    /* background-color: #ccc; */
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    right: 3%;
 }
 .list__1 {
     display: none;
@@ -126,7 +147,8 @@ input{
 
 td, tr, th{
     color: #0e0505;
-    border: 1px solid #181717;
+    border: 1px solid #DDE2E8;
+    background-color: #FFF;
     text-align: center;
 }
 tr:hover{
@@ -236,7 +258,7 @@ select:focus, textarea:focus, input:focus{
     width: 30%;
 }
 .form__box2--2-width h3,.form__box2--2-high h3{
-    color: #f7f7f7;
+    color: #FFF;
 }
 
 .form__box--title{
@@ -287,6 +309,92 @@ form{
     margin-left: 50%;
     transform: translateX(-50%);
 }
+.product-sign{
+    display: none;
+}
+.form__create--oder{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    background-color: #FFF;
+    padding: 50px 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+label{
+    width: 320px;
+    margin: 5px;
+}
+label span{
+    color: #181717;
+    
+}
+.form__create--oder input,.form__create--oder select {
+    float: right;
+    height: 34px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid #DDE2E8;
+    margin-bottom: 10px;
+}
+.form__create--oder button{
+    height: 34px;
+    width: 100%;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid #DDE2E8;
+    margin: 10px auto;
+ 
+    background: #1253a3;
+    cursor: pointer;
+}
+.form__close i{
+    color: #0b202d;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    margin-bottom: 100px;
+}
+.none{
+    display: none;
+}
+.change__background{
+    background-color: #1615155a;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+table select, table button{
+    margin: 0;
+    padding: 0;
+}
+table select{
+    width: 200px;
+    cursor: pointer;
+    color: #31708f;
+    
+}
+option{
+    cursor: pointer;
+    color: #31708f;
+}
+th{
+    color: #73879c;
+    padding: 5px;
+}
+td{
+    color: #31708f;
+}
+.none{
+    display: none;
+}
 @media print{
   .staff__leftbar, .staff__header{
     display: none;
@@ -302,13 +410,17 @@ form{
     }
     .staff__form--box1,.staff__form--box2,.staff__form--box3{
         width: 100%;
+        margin-top: -10px;
     }
     .staff__form--box3{
        
-        /* padding-bottom: 50px; */
+        padding-bottom: 62px;
     }
-    .print, button{
+    .print, button, .form__box3--status{
         display: none;
     }
-    
+    .product-sign{
+        display: block;
+        transform: translate(200px,-10px);
+    }
 }
