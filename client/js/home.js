@@ -1,0 +1,12 @@
+document.getElementById("home__search").addEventListener('click',function(){
+   document.getElementById("form__home").classList.remove("none");
+   document.getElementById("change__background--home").classList.add("change__background");
+  });
+  document.getElementById("form__close--home").addEventListener('click',function(){
+   document.getElementById("form__home").classList.add("none");
+   document.getElementById("change__background--home").classList.remove("change__background");
+  });
+  document.getElementById("create-order-home").addEventListener('click',function(){
+    document.getElementById("form__home").classList.add("none");
+    document.getElementById("change__background--home").classList.remove("change__background");
+   });

@@ -6,7 +6,9 @@
     <title>MagicPost</title>
     <link rel="stylesheet" href="../css/img.css">
     <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/staff.css">
     <link rel="stylesheet" href="../css/home.css">
+ 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -26,8 +28,258 @@
         <div class="form__container">
             <input type="text" placeholder="Nhập mã đơn hàng">
             
-            <button type="submit">Tra cứu</button>
+            <button type="submit" id="home__search">Tra cứu</button>
+            
         </div>
     </form>
+    <div id="change__background--home">
+        <form action="#" class="staff__form none form__home" id="form__home">
+          <div class="form__close form__close--home" id="form__close--home">
+            <i class="fa-solid fa-x"></i>
+          </div>
+          <div class="staff__form--box1">
+            <div class="box1--Sender">
+              <h1 class="form__box--title">Người gửi</h1>
+              <hr />
+              <div class="form__box1--1">
+                <div class="form__box1--1-user">
+                  <div style="display: flex">
+                    <h3>Họ tên</h3>
+                    <!-- <span class="important">*</span> -->
+                  </div>
+                  <input
+                    type="text"
+                    id="oder-username-home"
+                    placeholder="Họ tên" 
+                  />
+                </div>
+                <div class="form__box1--1-phone">
+                  <div style="display: flex">
+                    <h3>Điện thoại</h3>
+                    <!-- <span class="important">*</span> -->
+                  </div>
+                  <input
+                    type="text"
+                    id="order-phone-home"
+                    placeholder="Điện thoại người gửi"
+                  />
+                </div>
+              </div>
+              <div class="form__box1--address">
+                <div style="display: flex">
+                  <h3>Địa chỉ</h3>
+                  <!-- <span class="important">*</span> -->
+                </div>
+                <input
+                  id="order-address-home"
+                  type="text"
+                  style="width: 100%"
+                  placeholder="Địa chỉ người gửi"
+                />
+              </div>
+            </div>
+            <div class="box1--Receiver">
+              <h1 class="form__box--title">Người nhận</h1>
+              <hr />
+              <div class="form__box1--2">
+                <div class="form__box1--2-phone">
+                  <div style="display: flex">
+                    <h3>Số điện thoại</h3>
+                    <!-- <span class="important">*</span> -->
+                  </div>
+                  <input
+                    id="recieve-phone-home"
+                    type="text"
+                    placeholder="Số điện thoại"
+                  />
+                </div>
+                <div class="form__box1--2-user">
+                  <div style="display: flex">
+                    <h3>Họ tên</h3>
+                    <!-- <span class="important">*</span> -->
+                  </div>
+                  <input
+                    id="recieve-name-home"
+                    type="text"
+                    placeholder="Họ tên"
+                  />
+                </div>
+              </div>
+              <div class="form__box1--address">
+                <div style="display: flex">
+                  <h3>Địa chỉ</h3>
+                  <!-- <span class="important">*</span> -->
+                </div>
+                <input
+                  id="recieve-address-home"
+                  type="text"
+                  style="width: 100%"
+                  placeholder="Địa chỉ người nhận"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="staff__form--box2">
+            <h1 class="form__box--title">Thông tin bưu gửi</h1>
+            <hr />
+            <div class="form__box2--product">
+              <div style="display: flex">
+                <h3>Tên sản phẩm</h3>
+                <!-- <span class="important">*</span> -->
+              </div>
+              <input
+                id="product-name-home"
+                type="text"
+                style="width: 100%"
+                placeholder="Tên sản phẩm"
+              />
+            </div>
+            <div class="form__box2--1">
+              <div class="form__box2--1-price">
+                <div style="display: flex">
+                  <h3>Giá</h3>
+                  <!-- <span class="important">*</span> -->
+                </div>
+                <input
+                  id="product-price-home"
+                  type="text"
+                  style="width: 98%"
+                  placeholder="vnd"
+                />
+              </div>
+              <div class="form__box2--1-mass">
+                <div style="display: flex">
+                  <h3>Khối lượng</h3>
+                  <!-- <span class="important">*</span> -->
+                </div>
+                <input
+                  id="product-kl-home"
+                  type="text"
+                  style="width: 98%"
+                  placeholder="gram"
+                />
+              </div>
+              <div class="form__box2--1-quantity">
+                <div style="display: flex">
+                  <h3>Số lượng</h3>
+                  <!-- <span class="important">*</span> -->
+                </div>
+                <input
+                  id="product-quantity-home"
+                  type="text"
+                  placeholder=""
+                  style="width: 100%"
+                />
+              </div>
+            </div>
+            <div class="form__box2--2">
+              <div class="form__box2--2-length">
+                <div style="display: flex">
+                  <h3>Kích thước</h3>
+                  <!-- <span class="important">*</span> -->
+                </div>
+                <input
+                  id="product-length-home"
+                  type="text"
+                  placeholder="Dài(cm)"
+                  style="width: 100%"
+                />
+              </div>
+              <div class="form__box2--2-width">
+                <div style="display: flex">
+                  <h3>dgds</h3>
+                  <!-- <span class="important"></span> -->
+                </div>
+                <input
+                  id="product-rong-home"
+                  type="text"
+                  placeholder="Rộng(cm)"
+                  style="width: 100%"
+                />
+              </div>
+              <div class="form__box2--2-high">
+                <div style="display: flex">
+                  <h3>ffg</h3>
+                  <!-- <span class="important"></span> -->
+                </div>
+                <input
+                  id="product-heigh-home"
+                  type="text"
+                  placeholder="Cao(cm)"
+                  style="width: 100%"
+                />
+              </div>
+            </div>
+            <div class="form__box2--note">
+              <h3>Ghi chú</h3>
+              <textarea
+                name=""
+                id="order-note-home"
+                cols="30"
+                rows="4"
+              ></textarea>
+            </div>
+          </div>
+          <div class="staff__form--box3">
+            <h1 class="form__box--title">Bưu gửi</h1>
+            <hr />
+            <div class="form__box3--code">
+              <div style="display: flex">
+                <h3>Mã bưu gửi</h3>
+                <!-- <span class="important">*</span> -->
+              </div>
+              <input style="width: 100%;"
+                type="text"
+                id="order-code-home"
+                placeholder="Mã"
+              />
+            </div>
+            <div class="form__box3--status">
+              <div style="display: flex">
+                <h3>Tình trạng vận chuyển</h3>
+                <!-- <span class="important">*</span> -->
+              </div>
+              <select name="" id="bill-status-home">
+                <option value="Chưa giao">Giao thất bại</option>
+                <option value="Đã giao">Đã giao</option>
+                <option value="Giao thành công">Giao thành công</option>
+              </select>
+            </div>
+            <div class="form__box3--customercheck">
+              <div style="display: flex; margin-top: 20px">
+                <input type="checkbox" name="" id="cho-xem-home" />
+                <h3 style="margin-top: 8px">Cho khách xem hàng</h3>
+              </div>
+            </div>
+            <hr />
+            <!-- <div class="form__box3--battery">
+                <div style="display: flex">
+                    <input type="checkbox" name="" id="chat-long">
+                    <h3 style="margin-top: 8px;"> Hàng chất lỏng,pin sạc</h3>
+                  </div>
+            </div> -->
+            <button type="submit" id="create-order-home">Xác nhận</button>
+            <!-- <h3 class="print" id="print" onclick="printForm()">
+              In bưu gửi
+            </h3> -->
+            <!-- <div class="product-sign" style="text-align: center">
+              <h3>Ngày nhận</h3>
+              <span style="color: black">..../..../....</span>
+              <br />
+              <h3 style="transform: translateY(-10px)">Người nhận</h3>
+              <h4
+                style="
+                  color: black;
+                  font-size: 11px;
+                  transform: translateY(-12px);
+                "
+              >
+                ký tên
+              </h4>
+            </div> -->
+          </div>
+        </form>
+      </div>
+      <script src="../js/home.js"></script>
 </body>
 </html>

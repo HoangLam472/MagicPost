@@ -1,97 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MagicPost</title>
-    <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/manager.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/manager.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
     <div class="manager">
-        <div class="manager__container">
-            <div class="manager__leftbar">
-                <h1 class="manager__leftbar--title">
-                    MagicPost
-                </h1>
-                <span class="list__1--title" id="list__1--title">Quản lý nhân viên </span>
-                <span class="icon--angle" id="list__1--icon"><i class="fa-solid fa-angle-down"></i></span>
-                <ul class="list__1">
+      <div class="manager__container">
+        <div class="manager__leftbar">
+          <h1 class="manager__leftbar--title">MagicPost</h1>
+          <span class="list__1--title" id="list__1--title"
+            >Quản lý nhân viên
+          </span>
+          <!-- <span class="icon--angle" id="list__1--icon"><i class="fa-solid fa-angle-down"></i></span> -->
+          <!-- <ul class="list__1">
                     <li class="list__1--items">
                         <span id="list__1--items-title1">Danh sách nhân viên</span>
                     <li class="list__1--items">
                         <span id="list__1--items-title2">Thêm nhân viên</span>   
                     </li>
-                </ul>
-                <ul class="list__2">
-                    <span class="list__2--title">Thống kê </span>
-                    <span class="icon--angle"><i class="fa-solid fa-angle-down"></i></span>
-                </ul>
-
-            </div>
-            <div class="manager__container--box">
-                <div class="manager__header">
-                    <div class="icon--menu"><i class="fa-solid fa-bars"></i></div>
-                    <input type="text" placeholder="Search for...">
-                    <div class="icon--seach"><i class="fa-solid fa-magnifying-glass"></i></div>
-                    <div class="icon--user"><i class="fa-solid fa-user"></i></div>
-                    <h2 class="manager__header--text">manager</h2>
-                    <div class="icon--angle"><i class="fa-solid fa-angle-down"></i></div>
-                </div>
-                <div class="manager__main">
-                    <table class="table1 none" id="table1"  collapse;>
-                        <thead>
-                            <tr>
-                                <th>STT</th>
-                                <th>Họ và tên</th>
-                                <th>Email</th>
-                                <th>Số điện thoại</th>
-                                <th>Địa chỉ</th>
-                               
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>253367747</td>
-                                <td>45 kg</td>
-                                <td>1.2 m</td>
-                                <td>0.5 m</td>
-                                
-                            </tr>
-                            
-                        </tbody>
-                        <tfoot></tfoot>
-                    </table>
-                    <table class="table1 none" id="table2"  collapse;>
-                        <thead>
-                            <tr>
-                                <th>STT</th>
-                                <th>Họ và tên</th>
-                                <th>Email</th>
-                                <th>Số điện thoại</th>
-                                <th>Địa chỉ</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>LAM</td>
-                                <td>LAM</td>
-                                <td>1.2 m</td>
-                                <td>0.5 m</td>
-                            </tr>
-                            
-                        </tbody>
-                        <tfoot></tfoot>
-                    </table>
-                </div>
-            </div>
-            
+                </ul> -->
+          <ul class="list__2">
+            <span class="list__2--title">Thống kê </span>
+            <!-- <span class="icon--angle"><i class="fa-solid fa-angle-down"></i></span> -->
+          </ul>
         </div>
+        <div class="manager__container--box">
+          <div class="manager__header">
+            <div class="icon--menu"><i class="fa-solid fa-bars"></i></div>
+            <!-- <input type="text" placeholder="Search for...">
+                    <div class="icon--seach"><i class="fa-solid fa-magnifying-glass"></i></div> -->
+            <div class="header__user">
+              <div class="icon--user"><i class="fa-solid fa-user"></i></div>
+              <h2 class="manager__header--text">Admin</h2>
+            </div>
+
+            <!-- <div class="icon--angle"><i class="fa-solid fa-angle-down"></i></div> -->
+            <div class="sign_out"><a href="../index.html">Đăng xuất</a></div>
+          </div>
+          <div class="manager__main">
+            <div  id="add--refresh" class="none add--refresh">
+              <button
+                href="#"
+                class="btn s-full-width js-buy-ticket"
+                id="btn__add-admin"
+              >
+                Thêm nhân viên
+              </button>
+              <div class="icon__refresh" id="icon__refresh">
+                <i class="fa-solid fa-rotate-right"></i>
+              </div>
+            </div>
+
+            <table class="table1 none" id="table2" collapse;>
+              <thead>
+                <tr>
+                  <th>STT</th>
+                  <th>Mã NV</th>
+                  <th>Họ và tên</th>
+
+                  <th style="width: 180px">Số điện thoại</th>
+                  <th style="width: 250px">Chức vụ</th>
+                  <th>Nơi làm việc</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>1djdjdj</td>
+
+                  <td>LAM</td>
+                  <td>1.2 m</td>
+                  <td>0.5 m</td>
+                  <td>đfff</td>
+                  <td class="delete" id="delete">xóa</td>
+                </tr>
+              </tbody>
+              <tfoot></tfoot>
+            </table>
+            <div id="change__background-admin">
+              <form
+                action="#"
+                class="form__create--admin none"
+                id="form__create--admin"
+              >
+                <div class="form__close" id="form__close--admin">
+                  <i class="fa-solid fa-x"></i>
+                </div>
+                <label>
+                  <span>Mã nhân viên</span>
+                  <input type="text" />
+                </label>
+                <label>
+                  <span>Họ và tên</span>
+                  <input type="text" />
+                </label>
+                <label>
+                  <span>Số điện thoại</span>
+                  <input type="text" />
+                </label>
+                <label>
+                  <span>Chức vụ</span>
+                  <input type="text" />
+                </label>
+                <label>
+                  <span>Nơi làm việc</span>
+                  <input type="text" />
+                </label>
+                <button id="btn-admin">Xác nhận</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="../js/manager.js"></script>
-</body>
+    <script src="../js/admin.js"></script>
+  </body>
 </html>

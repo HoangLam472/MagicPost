@@ -102,8 +102,17 @@ input{
 
 td, tr, th{
     color: #0e0505;
-    border: 1px solid #181717;
+    border: 1px solid #DDE2E8;
+    background-color: #FFF;
     text-align: center;
+}
+th{
+    color: #73879c;
+    padding: 5px;
+}
+td{
+    color: #31708f;
+    padding: 5px;
 }
 tr:hover{
     background-color: #ccc;
@@ -113,6 +122,78 @@ table{
     margin-top: 20px;
     border-collapse: collapse;
     width: 100%;
+}
+.add--refresh{
+    display: flex;
+}
+.icon__refresh i{
+    color: #31708f;
+    font-size: 25px;
+    transform: rotate(12deg);
+    margin-left: 15px;
+    margin-top: 7px;
+    cursor: pointer;
+}
+.delete{
+    text-decoration: underline;
+    cursor: pointer;
+}
+label{
+    width: 320px;
+    margin: 5px;
+}
+label span{
+    color: #31708f;
+    
+}
+.form__create--admin{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    background-color: #FFF;
+    padding: 50px 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.form__create--admin input {
+    float: right;
+    height: 34px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid #DDE2E8;
+    margin-bottom: 10px;
+}
+.form__create--admin button{
+    height: 34px;
+    width: 100%;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid #DDE2E8;
+    margin: 10px auto;
+ 
+    background: #1253a3;
+    cursor: pointer;
+}
+.form__close i{
+    color: #31708f;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    margin-bottom: 100px;
+}
+
+
+.change__background--admin{
+    background-color: #1615155a;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .none{
     display: none;

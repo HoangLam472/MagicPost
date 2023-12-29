@@ -31,6 +31,8 @@ document.getElementById("list__1--icon").addEventListener('click',function(){
 function showForm() {
     var form = document.getElementById("staff__form");
     form.classList.remove("none");
+    var detail__form = document.getElementById("form__detail").classList.add("none");
+    var table3 = document.getElementById("table3").classList.add("none");
   }
 
   function printForm() {
@@ -52,14 +54,16 @@ function showForm() {
     var table1 = document.getElementById("table1");
     table1.classList.add("none");
     var table2 = document.getElementById("table2");
-  
+    var table3 = document.getElementById("table3").classList.add("none");
     table2.classList.add("none");
+    var detail__form = document.getElementById("form__detail").classList.add("none");
 });
 document.getElementById("form__close").addEventListener('click',function(){
   
     var form1 = document.getElementById("form__create--oder");
     document.getElementById("change__background").classList.remove("change__background");
     form1.classList.add("none");
+    var detail__form = document.getElementById("form__detail").classList.add("none");
     
 });
 document.getElementById("list__1--items-title3").addEventListener('click',function(){
@@ -71,6 +75,9 @@ document.getElementById("list__1--items-title3").addEventListener('click',functi
   var table2 = document.getElementById("table2");
 
   table2.classList.add("none");
+  var table3 = document.getElementById("table3").classList.add("none");
+  var detail__form = document.getElementById("form__detail").classList.add("none");
+
 });
 document.getElementById("list__1--items-title4").addEventListener('click',function(){
   var form = document.getElementById("staff__form");
@@ -80,4 +87,53 @@ document.getElementById("list__1--items-title4").addEventListener('click',functi
   var table2 = document.getElementById("table2");
 
   table2.classList.remove("none");
+  var table3 = document.getElementById("table3").classList.add("none");
+  var detail__form = document.getElementById("form__detail").classList.add("none");
 });
+document.getElementById("list__1--items-title2").addEventListener('click',function(){
+  var form = document.getElementById("staff__form");
+  form.classList.add("none");
+  var table1 = document.getElementById("table1");
+  table1.classList.add("none");
+  var table2 = document.getElementById("table2");
+
+  table2.classList.add("none");
+  var table3 = document.getElementById("table3").classList.remove("none");
+  var detail__form = document.getElementById("form__detail").classList.add("none");
+
+})
+document.getElementById("view-detail").addEventListener('click',function(){
+  var form = document.getElementById("staff__form");
+  form.classList.add("none");
+  var table1 = document.getElementById("table1");
+  table1.classList.add("none");
+  var table2 = document.getElementById("table2");
+
+  table2.classList.add("none");
+  var detail__form = document.getElementById("form__detail").classList.remove("none");
+  document.getElementById("change__background--detail").classList.add("change__background");
+})
+document.getElementById("form__close--detail").addEventListener('click',function(){
+  var form = document.getElementById("staff__form");
+  form.classList.add("none");
+  var table1 = document.getElementById("table1");
+  table1.classList.add("none");
+  var table2 = document.getElementById("table2");
+
+  table2.classList.add("none");
+  var detail__form = document.getElementById("form__detail").classList.add("none");
+  document.getElementById("change__background--detail").classList.remove("change__background");
+})
+document.getElementById("create-order-detail").addEventListener('click',function(){
+  var form = document.getElementById("staff__form");
+  form.classList.add("none");
+  var table1 = document.getElementById("table1");
+  table1.classList.add("none");
+  var table2 = document.getElementById("table2");
+
+  table2.classList.add("none");
+
+  var detail__form = document.getElementById("form__detail").classList.add("none");
+  document.getElementById("change__background--detail").classList.remove("change__background");
+  var table3 = document.getElementById("table3").classList.remove("none");
+})
