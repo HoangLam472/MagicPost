@@ -83,7 +83,7 @@ function SomeDeleteRowFunction(o) {
     document.getElementById("form__create--manager").classList.add("none");
     document.getElementById("change__background-manager").classList.remove("change__background");
   });
-<<<<<<< HEAD
+
   document.getElementById("btn-manager").addEventListener('click',function(){
     document.getElementById("piechart-manager").classList.add("none");
     var table1 = document.getElementById("table1")
@@ -104,15 +104,8 @@ function SomeDeleteRowFunction(o) {
     document.getElementById("dialog__create--order-manager-1").classList.add("none");
   });
 
-=======
-  // document.getElementById("btn-manager").addEventListener('click',function(){
-  //   document.getElementById("piechart-manager").classList.add("none");
-  //   var table1 = document.getElementById("table1")
-  //   table1.classList.remove("none");
-  //   document.getElementById("form__create--manager").classList.add("none");
-  //   document.getElementById("change__background-manager").classList.remove("change__background");
-  // });
->>>>>>> origin/main
+
+
 
 
   google.charts.load('current', {'packages':['corechart']});

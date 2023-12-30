@@ -70,14 +70,10 @@ function get_all_user () {
                     c3.innerHTML = objArr[i].email;
                     c4.innerHTML = objArr[i].phone;
                     c5.innerHTML = objArr[i].address ;
-<<<<<<< HEAD
-                    c6.innerHTML = '<td><input type="button" class="delete__nv" id="delete__nv" value="Delete" onclick="SomeDeleteRowFunction(this)"></td>'
 
-    
-=======
                     c6.innerHTML = '<td><input type="button" class="delete__nv" value="Delete" onclick="SomeDeleteRowFunction(this)"></td>'
                     c6.firstChild.setAttribute('id', id);
->>>>>>> origin/main
+
                     tr.appendChild(c1);
                     tr.appendChild(c2);
                     tr.appendChild(c3);
