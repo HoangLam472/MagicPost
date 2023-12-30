@@ -59,7 +59,7 @@ document.getElementById("form__close--admin").addEventListener('click',function(
   google.charts.setOnLoadCallback(drawChart);
 
   function drawChart() {
-
+    
     var data = google.visualization.arrayToDataTable(dataArray);
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -71,10 +71,11 @@ let buildChart = document.getElementById('select-2').addEventListener('change', 
   if (e.srcElement.value === 'k2') {
     dataArray = [
       ['Task', 'Hours per Day'],
-      ['Hàng gửi',      1100],
-      ['Thành nhận',  3900],
+      ['Hàng hoàn về',      21],
+      ['Hàng chuyển tới',   180],
+      ['Hàng chuyển đi',  200],
     ];
-    options.title = 'kkk2'
+    options.title = 'Tổng: 401 đơn'
     drawChart();
   } else if (e.srcElement.value === 'k1') {
     dataArray = [
@@ -82,23 +83,55 @@ let buildChart = document.getElementById('select-2').addEventListener('change', 
       ['Hàng gửi',      1500],
       ['Thành nhận',  3500],
     ];
-    options.title = 'Tổng 5000 đơn'
+    options.title = 'Tổng: 5000 đơn'
     drawChart();
   } else if (e.srcElement.value === 'k3') {
     dataArray = [
       ['Task', 'Hours per Day'],
-      ['Hàng gửi',      1900],
-      ['Thành nhận',  3100],
+      ['Hàng hoàn về',      52],
+      ['Hàng chuyển tới',   260],
+      ['Hàng chuyển đi',  500],
     ];
-    options.title = 'kkk3'
+    options.title = 'Tổng: 812 đơn'
     drawChart();
   } else if (e.srcElement.value === 'k4') {
     dataArray = [
       ['Task', 'Hours per Day'],
-      ['Hàng gửi',      800],
-      ['Thành nhận',  4200],
+      ['Hàng hoàn về',      112],
+      ['Hàng chuyển tới',   650],
+      ['Hàng chuyển đi',  302],
     ];
-    options.title = 'kkk4'
+    options.title = 'Tổng: 1064 đơn'
+    drawChart();
+  }
+  else if (e.srcElement.value === 'k5') {
+    dataArray = [
+      ['Task', 'Hours per Day'],
+      ['Hoàn về',      30],
+      ['Đang giao',   200],
+      ['Thành công',  380],
+    ];
+    options.title = 'Tổng: 610 đơn'
+    drawChart();
+  }
+  else if (e.srcElement.value === 'k6') {
+    dataArray = [
+      ['Task', 'Hours per Day'],
+      ['Hoàn về',      69],
+      ['Đang giao',   520],
+      ['Thành công',  402],
+    ];
+    options.title = 'Tổng: 991 đơn'
+    drawChart();
+  }
+  else if (e.srcElement.value === 'k7') {
+    dataArray = [
+      ['Task', 'Hours per Day'],
+      ['Hoàn về',      96],
+      ['Đang giao',   396],
+      ['Thành công',  696],
+    ];
+    options.title = 'Tổng: 1188 đơn'
     drawChart();
   }
 })

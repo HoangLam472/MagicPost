@@ -85,7 +85,7 @@
             </div> -->
             <div class="header__user">
               <div class="icon--user"><i class="fa-solid fa-user"></i></div>
-              <h2 class="staff__header--text">Staff</h2>
+              <h2 class="staff__header--text" id="admin-name">Staff</h2>
             </div>
 
             <!-- <div class="icon--angle">
@@ -105,13 +105,41 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr id="delete-row">
                   <td>1</td>
                   <td>253367747</td>
                   <td style="padding: 3px 10px">
                     <select name="" id="bill-status">
-                      <option value="Chưa giao">Giao thất bại</option>
                       <option value="Đang giao">Đang giao</option>
+                      <option value="Chưa giao">Giao thất bại</option>
+                      <option value="Giao thành công">Giao thành công</option>
+                    </select>
+                  </td>
+                  <td>1.2 m</td>
+                  <td style="padding: 3px 10px"><button id="confirm-2">Xác nhận</button></td>
+                </tr>
+                <tr >
+                  <td>1</td>
+                  <td>253367747</td>
+                  <td style="padding: 3px 10px">
+                    <select name="" id="bill-status" value="Đang giao">
+                      
+                      <option value="Đang giao">Đang giao</option>
+                      <option value="Chưa giao">Giao thất bại</option>
+                      <option value="Giao thành công">Giao thành công</option>
+                    </select>
+                  </td>
+                  <td>1.2 m</td>
+                  <td style="padding: 3px 10px"><button id="confirm-2">Xác nhận</button></td>
+                </tr>
+                <tr >
+                  <td>1</td>
+                  <td>253367747</td>
+                  <td style="padding: 3px 10px">
+                    <select name="" id="bill-status" value="Đang giao">
+                      
+                      <option value="Đang giao">Đang giao</option>
+                      <option value="Chưa giao">Giao thất bại</option>
                       <option value="Giao thành công">Giao thành công</option>
                     </select>
                   </td>
@@ -132,18 +160,46 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr id="delete-row1">
                   <td>1</td>
                   <td>253367747</td>
                   <td style="padding: 3px 10px">
                     <select name="" id="bill-status">
-                      <option value="Chưa giao">Giao thất bại</option>
                       <option value="Đang giao">Đang giao</option>
+                      <option value="Chưa giao">Giao thất bại</option>
                       <option value="Giao thành công">Giao thành công</option>
                     </select>
                   </td>
                   <td>1.2 m</td>
                   <td style="padding: 3px 10px"><button id="confirm-3">Xác nhận</button></td>
+                </tr>
+                <tr >
+                  <td>1</td>
+                  <td>253367747</td>
+                  <td style="padding: 3px 10px">
+                    <select name="" id="bill-status" value="Đang giao">
+                      
+                      <option value="Đang giao">Đang giao</option>
+                      <option value="Chưa giao">Giao thất bại</option>
+                      <option value="Giao thành công">Giao thành công</option>
+                    </select>
+                  </td>
+                  <td>1.2 m</td>
+                  <td style="padding: 3px 10px"><button id="confirm-2">Xác nhận</button></td>
+                </tr>
+                <tr >
+                  <td>1</td>
+                  <td>253367747</td>
+                  <td style="padding: 3px 10px">
+                    <select name="" id="bill-status" value="Đang giao">
+                      
+                      <option value="Đang giao">Đang giao</option>
+                      <option value="Chưa giao">Giao thất bại</option>
+                      <option value="Giao thành công">Giao thành công</option>
+                    </select>
+                  </td>
+                  <td>1.2 m</td>
+                  <td style="padding: 3px 10px"><button id="confirm-2">Xác nhận</button></td>
                 </tr>
               </tbody>
               <tfoot></tfoot>
@@ -798,5 +854,6 @@
     <script type="module" src="../js/order.api.js"></script>
     <script type="module" src="../js/staff_order.js"></script>
     <script type="module" src="../js/staff.order.js"></script>
+    <script src="../js/header_name.js"></script>
   </body>
 </html>
