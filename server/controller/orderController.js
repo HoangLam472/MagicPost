@@ -5,8 +5,12 @@ const validateMongoDbId = require("../utils/validateMongodbid");
 
 // tạo order mới
 const createOrder = asyncHandler(async (req, res) => {
+  const data = {
+    ...req.body,
+    orderLocation: "144 Xuân Thủy, Cầu Giấy, Hà Nội"
+  }
   try {
-    const newOrder = await Order.create(req.body);
+    const newOrder = await Order.create(data);
     res.json(newOrder);
   } catch (error) {
     throw new Error(error);

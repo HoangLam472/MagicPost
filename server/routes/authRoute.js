@@ -15,6 +15,7 @@ const {
   updateUserStatus,
   getAllUsers,
   getAllLeader,
+  getAllSystemUsers,
 } = require("../controller/userController");
 const {
   authMiddleware,
@@ -36,10 +37,12 @@ router.post("/edit-state/:id", authMiddleware, isPointLeader, updateUserStatus);
 
 router.get("/logout", logout);
 router.get("/all-users", authMiddleware, getAllUsers);
+router.get("/get-system-user", authMiddleware, getAllSystemUsers);
 router.get("/all-leader", authMiddleware, isAdmin, getAllLeader);
 
 router.put("/edit-user", authMiddleware, updateUser);
 
+router.delete("/admin-delete/:id", authMiddleware, isAdmin, deleteUsers);
 router.delete("/delete-user/:id", authMiddleware, isPointLeader, deleteUsers);
 router.delete("/delete-leader/:id", authMiddleware, isAdmin, deleteUsers);
 module.exports = router;

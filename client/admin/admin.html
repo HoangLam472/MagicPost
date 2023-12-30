@@ -71,9 +71,8 @@
 
                   <th style="width: 150px">Số điện thoại</th>
                   <th style="width: 200px">Chức vụ</th>
-                  <th>Nơi làm việc</th>
+                  <th>Địa chỉ</th>
                   <th>Tài khoản</th>
-                  <th>Mật khẩu</th>
                   <th></th>
                 </tr>
               </thead>
@@ -87,7 +86,6 @@
                   <td>0.5 m</td>
                   <td>đfff</td>
                   <td>staff1@gmail.com</td>
-                  <td>lamnhucc</td>
                   <td class="delete" id="delete">delete</td>
                 </tr>
               </tbody>
@@ -102,32 +100,32 @@
                   <i class="fa-solid fa-x"></i>
                 </div>
                 <label>
-                  <span>Mã nhân viên</span>
-                  <input type="text" />
-                </label>
-                <label>
                   <span>Họ và tên</span>
-                  <input type="text" />
+                  <input type="text" id="admin-username" />
                 </label>
                 <label>
                   <span>Số điện thoại</span>
-                  <input type="text" />
+                  <input type="text" id="admin-phone"/>
                 </label>
                 <label>
                   <span>Chức vụ</span>
-                  <input type="text" />
+                  <input type="text" id="admin-role"/>
                 </label>
                 <label>
                   <span>Nơi làm việc</span>
-                  <input type="text" />
+                  <input type="text" id="admin-post-office"/>
                 </label>
                 <label>
-                  <span>Tài khoản</span>
-                  <input type="text" />
+                  <span>Địa chỉ</span>
+                  <input type="text" id="admin-address"/>
+                </label>
+                <label>
+                  <span>Email</span>
+                  <input type="text" id="admin-email"/>
                 </label>
                 <label>
                   <span>Mật khẩu</span>
-                  <input type="text" />
+                  <input type="text" id="admin-pass"/>
                 </label>
                 <button type="button" id="btn-admin">Xác nhận</button>
               </form>
@@ -167,5 +165,6 @@
     </div>
     <script src="../js/admin.js"></script>
     <script src="../js/header_name.js"></script>
+    <script type="module" src="../js/user.manage.js"></script>
   </body>
 </html>

@@ -38,13 +38,6 @@ document.getElementById("form__close--admin").addEventListener('click',function(
     document.getElementById("dialog__change--backgrond-admin-1").classList.remove("change__background");
   });
 
-
-
-  document.getElementById("icon__refresh").addEventListener('click',function(){
-    location.reload();
-    // document.getElementById("piechart").classList.add("none");
-  });
-
   document.getElementById("list__2--title").addEventListener('click',function(){
     document.getElementById("page-2").classList.remove("none");
     var table2 = document.getElementById("table2")
@@ -109,3 +102,34 @@ let buildChart = document.getElementById('select-2').addEventListener('change', 
     drawChart();
   }
 })
+
+function SomeDeleteRowFunction(o) {
+  delete_user(o.id)
+  var p=o.parentNode.parentNode;
+  p.parentNode.removeChild(p);
+}
+
+function delete_user (id) {
+  const token = window.sessionStorage.getItem('token');
+  const url = `http://localhost:8080/api/user/admin-delete/${id}`;
+  fetch(url, {
+      method: 'DELETE',
+      headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+      }
+  }).then((res) => {
+      if (!res.ok) {
+          console.log("Lỗi");
+      } else {
+          return res.json();
+      }
+  }).then((data) => {
+      if (!data) {
+          console.log('Lỗi');
+      } else {
+          console.log(data);
+      }
+  })
+}

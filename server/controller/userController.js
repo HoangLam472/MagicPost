@@ -289,6 +289,15 @@ const getAllUsers = asyncHandler(async (req, res, next) => {
   }
 });
 
+const getAllSystemUsers = asyncHandler(async (req, res, nex) => {
+  try {
+    const getUsers = await User.find({});
+    res.json(getUsers);
+  } catch (err) {
+    throw new Error(err);
+  }
+})
+
 const getAllLeader = asyncHandler(async (req, res, next) => {
   try {
     const getLeaders = await User.find({
@@ -417,4 +426,5 @@ module.exports = {
   updateUserStatus,
   getAllUsers,
   getAllLeader,
+  getAllSystemUsers,
 };
