@@ -29,18 +29,15 @@ let update = document.querySelector('#update-list-user').addEventListener('click
     get_all_user();
 })
 
-let update2 = document.querySelector('#list__1--items-title1').addEventListener('click', (e) => {
-    e.preventDefault();
-    get_all_user();
-})
-
 function get_all_user () {
+    const token = window.sessionStorage.getItem('token');
     const url = `${config.API_URL}/api/user/all-users`;
     fetch(url, {
         method: 'GET',
         headers: {
             Accept: "application/json, text/plain, */*",
             "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`,
         }
     }).then((res) => {
         if (!res.ok) {
@@ -58,7 +55,8 @@ function get_all_user () {
             document.querySelector("#tb-danh-sach-nhan-vien tbody").innerHTML = "";
             let count = 0;
             for(let i = 0; i< objArr.length; i++){
-                if (objArr[i].role === 'assembly point staff') {
+                if (objArr[i].role.includes('staff') ) {
+                    const id = objArr[i]._id;
                     let tr = document.createElement("tr");
                     let c1 = document.createElement("td");
                     let c2 = document.createElement("td");
@@ -73,8 +71,7 @@ function get_all_user () {
                     c4.innerHTML = objArr[i].phone;
                     c5.innerHTML = objArr[i].address ;
                     c6.innerHTML = '<td><input type="button" class="delete__nv" value="Delete" onclick="SomeDeleteRowFunction(this)"></td>'
-
-    
+                    c6.firstChild.setAttribute('id', id);
                     tr.appendChild(c1);
                     tr.appendChild(c2);
                     tr.appendChild(c3);
@@ -89,26 +86,27 @@ function get_all_user () {
     })
 }
 
-let add_user = document.querySelector('#add-user').addEventListener('click', (e) => {
+let add_user = document.querySelector('#btn-manager').addEventListener('click', (e) => {
     e.preventDefault();
     const email = document.getElementById('add-email')
-    const point = document.getElementById('point-option')
     const userName = document.getElementById('add-username')
     const phone = document.getElementById('add-phone')
     const address = document.getElementById('add-address')
     const password = document.getElementById('add-password')
-    post_add_user(email.value, point.value, userName.value, phone.value, address.value, password.value);
+    post_add_user(email.value, userName.value, phone.value, address.value, password.value);
 })
 
-function post_add_user (email, point, username, phone, address, password) {
-    const url = `${config.API_URL}/api/user/register/${point}`;
+function post_add_user (email, username, phone, address, password) {
+    const token = window.sessionStorage.getItem('token')
+    const url = `${config.API_URL}/api/user/register`;
     fetch(url, {
         method: 'POST',
         headers: {
             Accept: "application/json, text/plain, */*",
             "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         },
-        body: JSON.stringify({email: email, userName: username, phone: phone, address: address, password: password})
+        body: JSON.stringify({email: email, userName: username, phone: phone, address: address, password: password, role: 'transaction point staff'})
     }).then((res) => {
         if (!res.ok) {
             alert('Lỗi dữ liệu');
@@ -126,47 +124,46 @@ function post_add_user (email, point, username, phone, address, password) {
     })
 }
 
-let getOptions = document.getElementById("add-user-btn").addEventListener('click', (e) => {
-    e.preventDefault();
-    data();
-})
+// let getOptions = document.getElementById("add-nv").addEventListener('click', (e) => {
+//     e.preventDefault();
+//     data();
+// })
 
-const data = () => {
-    const data = get_all_point();
-    console.log(data);
-}
+// const data = () => {
+//     const data = get_all_point();
+// }
 
-function get_all_point () {
-    const url = `${config.API_URL}/api/point`;
-    fetch(url, {
-        method: 'GET',
-        headers: {
-            Accept: "application/json, text/plain, */*",
-            "Content-Type": "application/json",
-        }
-    }).then((res) => {
-        if (!res.ok) {
-            alert('Lỗi dữ liệu');
-            return;
-        } else {
-            return res.json();
-        }
-    }).then((data) => {
-        if (!data) {
-            alert('Lỗi dữ liệu')
-            return;
-        } else {
-            const objArr = data;
-            document.querySelector("#point-option").innerHTML = "";
-            for(let i = 0; i< objArr.length; i++){
-                let o1 = document.createElement("option");
-                o1.innerHTML = `${objArr[i].pointName} - ${objArr[i].pointAddress}`;
-                o1.setAttribute("value", objArr[i]._id);
-                document.querySelector("#point-option").append(o1);
-            }
-        }
-    })
-}
+// function get_all_point () {
+//     const url = `${config.API_URL}/api/point`;
+//     fetch(url, {
+//         method: 'GET',
+//         headers: {
+//             Accept: "application/json, text/plain, */*",
+//             "Content-Type": "application/json",
+//         }
+//     }).then((res) => {
+//         if (!res.ok) {
+//             alert('Lỗi dữ liệu');
+//             return;
+//         } else {
+//             return res.json();
+//         }
+//     }).then((data) => {
+//         if (!data) {
+//             alert('Lỗi dữ liệu')
+//             return;
+//         } else {
+//             const objArr = data;
+//             document.querySelector("#add-point-option").innerHTML = "";
+//             for(let i = 0; i< objArr.length; i++){
+//                 let o1 = document.createElement("option");
+//                 o1.innerHTML = `${objArr[i].pointName} - ${objArr[i].pointAddress}`;
+//                 o1.setAttribute("value", objArr[i]._id);
+//                 document.querySelector("#add-point-option").append(o1);
+//             }
+//         }
+//     })
+// }
 
 function get_point_by_id (id) {
     const url = `${config.API_URL}/api/point/${id}`;
