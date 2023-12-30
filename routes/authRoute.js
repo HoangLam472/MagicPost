@@ -11,6 +11,7 @@ const {
   loginHeadOfTransactionPointController,
   logout,
   updateUser,
+  deleteUsers,
   updateUserStatus,
   getAllUsers,
   getAllLeader,
@@ -38,5 +39,6 @@ router.get("/all-users",    getAllUsers);
 router.get("/all-leader", authMiddleware, isAdmin, getAllLeader);
 
 router.put("/edit-user", authMiddleware, updateUser);
-
+router.delete("/delete-user/:id", authMiddleware, isPointLeader, deleteUsers);
+router.delete("/delete-leader/:id", authMiddleware, isAdmin, deleteUsers);
 module.exports = router;
