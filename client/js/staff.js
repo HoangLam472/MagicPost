@@ -61,6 +61,7 @@ function showForm() {
     table2.classList.add("none");
     var detail__form = document.getElementById("form__detail").classList.add("none");
     document.getElementById("piechart-staff").classList.add("none");
+    document.getElementById("dialog__create--order-staff").classList.add("none");
 });
 document.getElementById("form__close").addEventListener('click',function(){
   
@@ -69,6 +70,7 @@ document.getElementById("form__close").addEventListener('click',function(){
     form1.classList.add("none");
     var detail__form = document.getElementById("form__detail").classList.add("none");
     document.getElementById("piechart-staff").classList.add("none");
+    document.getElementById("dialog__create--order-staff").classList.add("none");
 });
 document.getElementById("list__1--items-title3").addEventListener('click',function(){
   var form = document.getElementById("staff__form");
@@ -82,6 +84,7 @@ document.getElementById("list__1--items-title3").addEventListener('click',functi
   var table3 = document.getElementById("table3").classList.add("none");
   var detail__form = document.getElementById("form__detail").classList.add("none");
   document.getElementById("piechart-staff").classList.add("none");
+  document.getElementById("dialog__create--order-staff").classList.add("none");
 });
 document.getElementById("list__1--items-title4").addEventListener('click',function(){
   var form = document.getElementById("staff__form");
@@ -94,6 +97,7 @@ document.getElementById("list__1--items-title4").addEventListener('click',functi
   var table3 = document.getElementById("table3").classList.add("none");
   var detail__form = document.getElementById("form__detail").classList.add("none");
   document.getElementById("piechart-staff").classList.add("none");
+  document.getElementById("dialog__create--order-staff").classList.add("none");
 });
 document.getElementById("list__1--items-title2").addEventListener('click',function(){
   var form = document.getElementById("staff__form");
@@ -106,6 +110,7 @@ document.getElementById("list__1--items-title2").addEventListener('click',functi
   var table3 = document.getElementById("table3").classList.remove("none");
   var detail__form = document.getElementById("form__detail").classList.add("none");
   document.getElementById("piechart-staff").classList.add("none");
+  document.getElementById("dialog__create--order-staff").classList.add("none");
 });
 document.getElementById("view-detail").addEventListener('click',function(){
   var form = document.getElementById("staff__form");
@@ -118,6 +123,7 @@ document.getElementById("view-detail").addEventListener('click',function(){
   var detail__form = document.getElementById("form__detail").classList.remove("none");
   document.getElementById("change__background--detail").classList.add("change__background");
   document.getElementById("piechart-staff").classList.add("none");
+  document.getElementById("dialog__create--order-staff").classList.add("none");
 });
 document.getElementById("form__close--detail").addEventListener('click',function(){
   var form = document.getElementById("staff__form");
@@ -130,6 +136,7 @@ document.getElementById("form__close--detail").addEventListener('click',function
   var detail__form = document.getElementById("form__detail").classList.add("none");
   document.getElementById("change__background--detail").classList.remove("change__background");
   document.getElementById("piechart-staff").classList.add("none");
+  document.getElementById("dialog__create--order-staff").classList.add("none");
 });
 document.getElementById("create-order-detail").addEventListener('click',function(){
   var form = document.getElementById("staff__form");
@@ -144,6 +151,7 @@ document.getElementById("create-order-detail").addEventListener('click',function
   document.getElementById("change__background--detail").classList.remove("change__background");
   var table3 = document.getElementById("table3").classList.remove("none");
   document.getElementById("piechart-staff").classList.add("none");
+  document.getElementById("dialog__create--order-staff").classList.add("none");
 });
 
 document.getElementById("list__2--title").addEventListener('click',function(){
@@ -159,7 +167,54 @@ document.getElementById("list__2--title").addEventListener('click',function(){
   document.getElementById("change__background--detail").classList.remove("change__background");
   var table3 = document.getElementById("table3").classList.add("none");
   document.getElementById("piechart-staff").classList.remove("none");
+  document.getElementById("dialog__create--order-staff").classList.add("none");
 });
+
+document.getElementById("dialog__close-staff").addEventListener('click',function(){
+  document.getElementById("dialog__create--order-staff").classList.add("none");
+  document.getElementById("dialog__change--backgrond-staff").classList.remove("change__background");
+});
+document.getElementById("create-order").addEventListener('click',function(){
+  document.getElementById("dialog__create--order-staff").classList.remove("none");
+  document.getElementById("dialog__change--backgrond-staff").classList.add("change__background");
+});
+document.getElementById("confirm-oder-staff").addEventListener('click',function(){
+  document.getElementById("dialog__create--order-staff-1").classList.remove("none");
+  document.getElementById("dialog__change--backgrond-staff-1").classList.add("change__background");
+  document.getElementById("form__create--oder").classList.add("none");
+  document.getElementById("change__background").classList.remove("change__background");
+});
+
+document.getElementById("confirm-1").addEventListener('click',function(){
+  document.getElementById("dialog__create--order-staff-1").classList.add("none");
+  document.getElementById("dialog__change--backgrond-staff-1").classList.remove("change__background");
+});
+document.getElementById("dialog__close-staff-1").addEventListener('click',function(){
+  document.getElementById("dialog__create--order-staff-1").classList.add("none");
+  document.getElementById("dialog__change--backgrond-staff-1").classList.remove("change__background");
+});
+document.getElementById("confirm-2").addEventListener('click',function(){
+  document.getElementById("dialog__create--order-staff-2").classList.remove("none");
+  document.getElementById("dialog__change--backgrond-staff-2").classList.add("change__background");
+});
+document.getElementById("confirm-3").addEventListener('click',function(){
+  document.getElementById("dialog__create--order-staff-2").classList.remove("none");
+  document.getElementById("dialog__change--backgrond-staff-2").classList.add("change__background");
+});
+document.getElementById("confirm-69").addEventListener('click',function(){
+  document.getElementById("dialog__create--order-staff-2").classList.add("none");
+  document.getElementById("dialog__change--backgrond-staff-2").classList.remove("change__background");
+});
+
+document.getElementById("confirm-4").addEventListener('click',function(){
+  document.getElementById("dialog__create--order-staff-2").classList.add("none");
+  document.getElementById("dialog__change--backgrond-staff-2").classList.remove("change__background");
+});
+document.getElementById("dialog__close-staff-2").addEventListener('click',function(){
+  document.getElementById("dialog__create--order-staff-2").classList.add("none");
+  document.getElementById("dialog__change--backgrond-staff-2").classList.remove("change__background");
+});
+
 
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
@@ -168,14 +223,14 @@ function drawChart() {
 
   var data = google.visualization.arrayToDataTable([
     ['Task', 'Hours per Day'],
-    ['Thất bại',     50],
-    ['Đang giao',      250],
-    ['Thành công',  300],
+    ['Hoàn về',     30],
+    ['Đang giao',      200],
+    ['Thành công',  380],
     
   ]);
 
   var options = {
-    title: 'Thống kê tình trạng giao hàng'
+    title: 'Tổng: 610 đơn'
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('piechart-staff'));

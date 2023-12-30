@@ -20,12 +20,12 @@
       <div class="staff1__container">
         <div class="staff1__leftbar">
           <h1 class="staff1__leftbar--title">MagicPost</h1>
-          <!-- <ul class="list__2">
-            <span class="list__2--title" id="list__2--title">Thống kê </span> -->
-          <!-- <span class="icon--angle"
+          <ul class="list__2">
+            <span class="list__2--title none" id="list__2--title">Thống kê </span>
+            <!-- <span class="icon--angle"
               ><i class="fa-solid fa-angle-down"></i
             ></span> -->
-          <!-- </ul> -->
+          </ul>
           <span class="list__1--title" id="list__1--title"
             >Quản lý đơn hàng
           </span>
@@ -34,16 +34,16 @@
           ></span>
 
           <ul class="list__1">
-            <!-- <li
-              class="list__1--items"
+            <li
+              class="list__1--items none"
               id="order-recognition"
               onclick="showForm()"
             >
-              <span>Ghi nhận đơn hàng</span> -->
-            <!-- <span class="icon--angle"
+              <span>Ghi nhận đơn hàng</span>
+              <!-- <span class="icon--angle"
                 ><i class="fa-solid fa-angle-down"></i
               ></span> -->
-            <!-- </li> -->
+            </li>
             <li class="list__1--items">
               <span id="list__1--items-title1">Tạo đơn hàng</span>
               <!-- <span class="icon--angle" id="list__1--items-icon1"
@@ -61,24 +61,24 @@
             <li class="list__1--items">
               <span id="list__1--items-title3">Hàng chuyển đến</span>
             </li>
-            <!-- <li class="list__1--items">
+            <li class="list__1--items none">
               <span id="list__1--items-title4">Hàng chuyển đi</span>
-            </li> -->
-            <!-- <li class="list__1--items">
-              <span id="list__1--items-title2">Đơn hàng</span> -->
-            <!-- <span class="icon--angle" id="list__1--items-icon2"
+            </li>
+            <li class="list__1--items none">
+              <span id="list__1--items-title2">Đơn hàng</span>
+              <!-- <span class="icon--angle" id="list__1--items-icon2"
                 ><i class="fa-solid fa-angle-down"></i
               ></span> -->
-            <!-- <ul class="list__1--2">
+              <!-- <ul class="list__1--2">
                 <li class="list__1--2-items">Xác nhận đơn hàng</li>
                 <li class="list__1--2-items">Kiểm tra đơn hàng</li>
               </ul> -->
-            <!-- </li> -->
+            </li>
           </ul>
         </div>
         <div class="staff1__container--box">
           <div class="staff1__header">
-            <div class="icon--menu"><i class="fa-solid fa-bars"></i></div>
+            <!-- <div class="icon--menu"><i class="fa-solid fa-bars"></i></div> -->
             <!-- <input class="staff1__header--search" type="text" placeholder="Search for..." />
             <div class="icon--seach">
               <i class="fa-solid fa-magnifying-glass"></i>
@@ -116,7 +116,7 @@
                     </select>
                   </td>
                   <td>1.2 m</td>
-                  <td style="padding: 3px 10px"><button>Xác nhận</button></td>
+                  <td style="padding: 3px 10px"><button id="confirm-2">Xác nhận</button></td>
                 </tr>
               </tbody>
               <tfoot></tfoot>
@@ -143,7 +143,7 @@
                     </select>
                   </td>
                   <td>1.2 m</td>
-                  <td style="padding: 3px 10px"><button>Xác nhận</button></td>
+                  <td style="padding: 3px 10px"><button id="confirm-3">Xác nhận</button></td>
                 </tr>
               </tbody>
               <tfoot></tfoot>
@@ -354,13 +354,25 @@
                     name=""
                     id="order-note"
                     cols="30"
-                    rows="4"
+                    rows="3"
                   ></textarea>
                 </div>
               </div>
               <div class="staff1__form--box3">
                 <h1 class="form__box--title">Bưu gửi</h1>
                 <hr />
+                <div class="form__box3--code">
+                  <div style="display: flex">
+                    <h3 style="margin-top: 5px;">Mã bưu gửi</h3>
+                    <!-- <span class="important">*</span> -->
+                  </div>
+                  <input
+                    style="width: 85%; margin-left: 10px;"
+                    type="text"
+                    id="order-code-detail"
+                    placeholder="Mã"
+                  />
+                </div>
                 <div class="form__box3--status">
                   <div style="display: flex">
                     <h3>Tình trạng vận chuyển</h3>
@@ -372,24 +384,29 @@
                     <option value="Giao thành công">Giao thành công</option>
                   </select>
                 </div>
-                <div class="form__box3--customercheck">
-                  <div style="display: flex; margin-top: 20px">
-                    <input type="checkbox" name="" id="cho-xem" />
-                    <h3 style="margin-top: 8px">Cho khách xem hàng</h3>
-                  </div>
-                </div>
 
-                <div class="form__box3--battery">
-                  <div style="display: flex">
-                    <input type="checkbox" name="" id="chat-long" />
-                    <h3 style="margin-top: 8px">Hàng chất lỏng,pin sạc</h3>
+                <div class="checkbox">
+                  <div class="form__box3--customercheck">
+                    <div style="display: flex; margin-top: 20px">
+                      <input type="checkbox" name="" id="cho-xem" />
+                      <h3 style="margin-top: 8px">Cho khách xem hàng</h3>
+                    </div>
+                  </div>
+  
+                  <div class="form__box3--battery">
+                    <div style="display: flex">
+                      <input type="checkbox" name="" id="chat-long" />
+                      <h3 style="margin-top: 8px">Hàng chất lỏng,pin sạc</h3>
+                    </div>
                   </div>
                 </div>
+                
+
                 <hr />
                 <button type="submit" id="create-order">Tạo bưu gửi</button>
-                <h3 class="print" id="print" onclick="printForm()">
+                <!-- <h3 class="print" id="print" onclick="printForm()">
                   In bưu gửi
-                </h3>
+                </h3> -->
                 <div class="product-sign" style="text-align: center">
                   <h3>Ngày nhận</h3>
                   <span style="color: black">..../..../....</span>
@@ -423,7 +440,7 @@
                 <label style="display: flex">
                   <span style="width: 235px">Trạng thái</span>
                   <select name="" id="bill-status">
-                    <option value="Chưa giao">Chưa giao</option>
+                    <option value="Chưa giao">Giao thất bại</option>
                     <option value="Đang giao">Đang giao</option>
                     <option value="Giao thành công">Giao thành công</option>
                   </select>
@@ -433,7 +450,7 @@
                   <input type="text" />
                 </label>
 
-                <button>Xác nhận</button>
+                <button id="confirm-oder-staff1">Xác nhận</button>
               </form>
             </div>
             <div id="change__background--detail">
@@ -694,7 +711,86 @@
                 </div>
               </form>
             </div>
-            <!-- <div id="piechart-staff1" class="piechart  "  style="width: calc(100vw -140px); height: calc(100vh - 140px);"></div> -->
+            <div
+              id="piechart-staff1"
+              class="piechart none"
+              style="width: calc(100vw -140px); height: calc(100vh - 140px)"
+            ></div>
+          
+             <div id="dialog__change--backgrond-staff1" class="dialog__change--backgrond-staff1">
+              <div class="dialog__create--order-staff1 none"  id="dialog__create--order-staff1">
+                <div class="dialog__close" id="dialog__close-staff1" >
+                  <i class="fa-solid fa-x"></i>
+                </div>
+                <div class="icon__tb">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  <p>Thông báo</p>
+                </div>
+                <hr>
+                <div class="dialog__discription">Tạo đơn hàng thành công!</div>
+                  <button class="print" id="print" onclick="printForm()" style="width: 150px; text-decoration: none; margin-right: 40px; margin-top: 20px;">
+                  In bưu gửi
+                </button>
+              </div>
+           
+            </div>
+            <div id="dialog__change--backgrond-staff1-1" class="dialog__change--backgrond-staff1">
+              <div class="dialog__create--order-staff1 none"  id="dialog__create--order-staff1-1">
+                <div class="dialog__close" id="dialog__close-staff1-1" >
+                  <i class="fa-solid fa-x"></i>
+                </div>
+                <div class="icon__tb">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  <p>Thông báo</p>
+                </div>
+                <hr>
+                <div class="dialog__discription">Tạo đơn hàng thành công!</div>
+                  <button class="print" id="confirm-1"  style="width: 150px; text-decoration: none; margin-right: 40px; margin-top: 20px;">
+                  Ok
+                </button>
+              </div>
+           
+            </div>
+
+            <div id="dialog__change--backgrond-staff1-2" class="dialog__change--backgrond-staff1">
+              <div class="dialog__create--order-staff1 none"  id="dialog__create--order-staff1-2">
+                <div class="dialog__close" id="dialog__close-staff1-2" >
+                  <i class="fa-solid fa-x"></i>
+                </div>
+                <div class="icon__tb">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  <p>Thông báo</p>
+                </div>
+                <hr>
+                <div class="dialog__discription">Cập nhật trạng thái thành công!</div>
+                  <button class="print" id="confirm-69"  style="width: 150px; text-decoration: none; margin-right: 40px; margin-top: 20px;">
+                  Ok
+                </button>
+              </div>
+           
+            </div>
+
+            <div id="dialog__change--backgrond-staff1-2" class="dialog__change--backgrond-staff1">
+              <div class="dialog__create--order-staff1 none"  id="dialog__create--order-staff1-2">
+                <div class="dialog__close" id="dialog__close-staff1-4" >
+                  <i class="fa-solid fa-x"></i>
+                </div>
+                <div class="icon__tb">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  <p>Thông báo</p>
+                </div>
+                <hr>
+                <div class="dialog__discription">Cập nhật trạng thái thành công!</div>
+                  <button class="print" id="confirm-4"  style="width: 150px; text-decoration: none; margin-right: 40px; margin-top: 20px;">
+                  Ok
+                </button>
+              </div>
+           
+            </div>
+
+
+
+
           </div>
         </div>
       </div>

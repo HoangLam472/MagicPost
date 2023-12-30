@@ -205,6 +205,49 @@ label span{
     height: calc(100vh - 100px);
     display: block;
 } */
+.dialog__create--order-admin{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    background-color: #FFF;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    padding-bottom: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+.icon__tb{
+    display: flex;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+.icon__tb i{
+    color: #31708f;
+    margin-top: 3px;
+    margin-right: 5px;
+    font-size: 20px;
+}
+.icon__tb p{
+    color: #31708f;
+}
+.dialog__discription{
+    color: #31708f;
+    margin-top: -15px;
+    font-size: 18px;
+    
+}
+.dialog__close i{
+    color: #31708f;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
 .none{
     display: none;
 }

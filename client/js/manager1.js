@@ -88,7 +88,20 @@ function SomeDeleteRowFunction(o) {
    table1.classList.remove("none");
    document.getElementById("form__create--manager1").classList.add("none");
    document.getElementById("change__background-manager1").classList.remove("change__background");
+   document.getElementById("dialog__change--backgrond-manager1-1").classList.add("change__background");
+   document.getElementById("dialog__create--order-manager1-1").classList.remove("none");
  });
+ document.getElementById("confirm-1").addEventListener('click',function(){
+  
+   document.getElementById("dialog__change--backgrond-manager1-1").classList.remove("change__background");
+   document.getElementById("dialog__create--order-manager1-1").classList.add("none");
+ });
+ document.getElementById("dialog__close-manager1-1").addEventListener('click',function(){
+  
+   document.getElementById("dialog__change--backgrond-manager1-1").classList.remove("change__background");
+   document.getElementById("dialog__create--order-manager1-1").classList.add("none");
+ });
+
 
 
  google.charts.load('current', {'packages':['corechart']});
@@ -98,14 +111,14 @@ function drawChart() {
 
  var data = google.visualization.arrayToDataTable([
    ['Task', 'Hours per Day'],
-   ['Thất bại',     50],
-   ['Đang giao',      250],
-   ['Thành công',  300],
+   
+   ['Hàng chuyển tới',      350],
+   ['Hàng chuyển đi',  250],
    
  ]);
 
  var options = {
-   title: 'Thống kê tình trạng giao hàng'
+   title: 'Tổng: 600 đơn'
  };
 
  var chart = new google.visualization.PieChart(document.getElementById('piechart-manager1'));
