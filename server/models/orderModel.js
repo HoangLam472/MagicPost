@@ -11,7 +11,6 @@ var orderSchema = new mongoose.Schema(
     createBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     originalLocation: {
       type: String,
-      required: true,
     },
     senderName: {
       type: String,
@@ -82,7 +81,6 @@ var orderSchema = new mongoose.Schema(
     },
     orderLocation: {
       type: String,
-      required: true,
     },
     orderStatus: {
       type: String,

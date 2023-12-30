@@ -92,9 +92,25 @@ function create_order (order) {
         }
     }).then((data) => {
         if (!data) {
-            console.log('Lỗi');
+            document.querySelector('#order-qrcode-detail').innerHTML = '';
+            const qrcode = new QRCode('order-qrcode-detail',
+            {
+                text: 12123,
+                width: 64,
+                height: 64,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+            });
         } else {
-            console.log(data);
+            document.querySelector('#order-qrcode-detail').innerHTML = '';
+            const qrcode = new QRCode('order-qrcode-detail',
+            {
+                text: data._id,
+                width: 64,
+                height: 64,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+            });
         }
     })
 };
