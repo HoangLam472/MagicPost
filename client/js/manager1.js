@@ -34,17 +34,17 @@ var modal = document.getElementById("myModal");
 var btn = document.getElementById("add-user-btn");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var span = document.getElementsById("form__close--manager");
 
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
- modal.style.display = "block";
-}
+// btn.onclick = function() {
+//  modal.style.display = "block";
+// }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
- modal.style.display = "none";
-}
+// // When the user clicks on <span> (x), close the modal
+// span.onclick = function() {
+//  modal.style.display = "none";
+// }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -54,6 +54,7 @@ window.onclick = function(event) {
 }
 
 function SomeDeleteRowFunction(o) {
+  delete_user(o.id);
    //no clue what to put here?
    var p=o.parentNode.parentNode;
        p.parentNode.removeChild(p);
@@ -82,13 +83,13 @@ function SomeDeleteRowFunction(o) {
    document.getElementById("form__create--manager1").classList.add("none");
    document.getElementById("change__background-manager1").classList.remove("change__background");
  });
- document.getElementById("btn-manager1").addEventListener('click',function(){
-   document.getElementById("piechart-manager1").classList.add("none");
-   var table1 = document.getElementById("table1")
-   table1.classList.remove("none");
-   document.getElementById("form__create--manager1").classList.add("none");
-   document.getElementById("change__background-manager1").classList.remove("change__background");
- });
+//  document.getElementById("btn-manager1").addEventListener('click',function(){
+//    document.getElementById("piechart-manager1").classList.add("none");
+//    var table1 = document.getElementById("table1")
+//    table1.classList.remove("none");
+//    document.getElementById("form__create--manager1").classList.add("none");
+//    document.getElementById("change__background-manager1").classList.remove("change__background");
+//  });
 
 
  google.charts.load('current', {'packages':['corechart']});
@@ -111,4 +112,29 @@ function drawChart() {
  var chart = new google.visualization.PieChart(document.getElementById('piechart-manager1'));
 
  chart.draw(data, options);
+}
+
+function delete_user (id) {
+  const token = window.sessionStorage.getItem('token');
+  const url = `http://localhost:8080/api/user/delete-user/${id}`;
+  fetch(url, {
+      method: 'DELETE',
+      headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+      }
+  }).then((res) => {
+      if (!res.ok) {
+          console.log("Lỗi");
+      } else {
+          return res.json();
+      }
+  }).then((data) => {
+      if (!data) {
+          console.log('Lỗi');
+      } else {
+          console.log(data);
+      }
+  })
 }

@@ -64,12 +64,9 @@ const updateOrderStatus = asyncHandler(async (req, res, next) => {
 //
 const getAllOrderInPoint = asyncHandler(async (req, res) => {
   const { _id, postOfficeId } = req.user;
-  console.log(_id, postOfficeId);
   validateMongoDbId(_id);
   try {
-    console.log(_id, postOfficeId);
     const findPoint = await Point.findOne({ _id: postOfficeId });
-    console.log(findPoint);
     const getAllOrderInPoint = await Order.find({
       orderLocation: findPoint.pointAddress,
     });
