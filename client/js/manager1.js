@@ -8,10 +8,8 @@
 //     list1.classList.toggle("show");
 // });
 document.getElementById("list__1--title").addEventListener('click',function(){
-    var table1 = document.getElementById("table1");
-    document.getElementById("btn--add").classList.remove("none");
-    table2.classList.add ("none");
-    table1.classList.remove("none");
+  document.getElementById("table1").classList.remove("none");
+  document.getElementById("piechart-manager1").classList.add("none");
 });
 
 // document.getElementById("list__1--items-title2").addEventListener('click',function(){
@@ -19,16 +17,16 @@ document.getElementById("list__1--title").addEventListener('click',function(){
 //     table1.classList.add ("none")
 //     table2.classList.remove("none");
 // });
-document.getElementById("btn--add").addEventListener('click',function(){
-    var form1 = document.getElementById("form__create--user");
-    document.getElementById("change__background").classList.add("change__background");
-    form1.classList.remove("none");
-});
-document.getElementById("form__close").addEventListener('click',function(){
-    var form1 = document.getElementById("form__create--user");
-    document.getElementById("change__background").classList.remove("change__background");
-    form1.classList.add("none");
-});
+// document.getElementById("btn--add").addEventListener('click',function(){
+//     var form1 = document.getElementById("form__create--user");
+//     document.getElementById("change__background").classList.add("change__background");
+//     form1.classList.remove("none");
+// });
+// document.getElementById("form__close").addEventListener('click',function(){
+//     var form1 = document.getElementById("form__create--user");
+//     document.getElementById("change__background").classList.remove("change__background");
+//     form1.classList.add("none");
+// });
 
 var modal = document.getElementById("myModal");
 
@@ -40,26 +38,77 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
-  modal.style.display = "block";
+ modal.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-  modal.style.display = "none";
+ modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+ if (event.target == modal) {
+   modal.style.display = "none";
+ }
 }
 
 function SomeDeleteRowFunction(o) {
-    //no clue what to put here?
-    var p=o.parentNode.parentNode;
-        p.parentNode.removeChild(p);
-   }
+   //no clue what to put here?
+   var p=o.parentNode.parentNode;
+       p.parentNode.removeChild(p);
+  }
 
 
+  document.getElementById("list__2--title").addEventListener('click',function(){
+   document.getElementById("piechart-manager1").classList.remove("none");
+   var table1 = document.getElementById("table1")
+   table1.classList.add("none");
 
+ });
+
+ document.getElementById("add-nv").addEventListener('click',function(){
+   document.getElementById("piechart-manager1").classList.add("none");
+   var table1 = document.getElementById("table1")
+   table1.classList.add("none");
+   document.getElementById("form__create--manager1").classList.remove("none");
+   document.getElementById("change__background-manager1").classList.add("change__background");
+ });
+
+ document.getElementById("form__close--manager1").addEventListener('click',function(){
+   document.getElementById("piechart-manager1").classList.add("none");
+   var table1 = document.getElementById("table1")
+   table1.classList.remove("none");
+   document.getElementById("form__create--manager1").classList.add("none");
+   document.getElementById("change__background-manager1").classList.remove("change__background");
+ });
+ document.getElementById("btn-manager1").addEventListener('click',function(){
+   document.getElementById("piechart-manager1").classList.add("none");
+   var table1 = document.getElementById("table1")
+   table1.classList.remove("none");
+   document.getElementById("form__create--manager1").classList.add("none");
+   document.getElementById("change__background-manager1").classList.remove("change__background");
+ });
+
+
+ google.charts.load('current', {'packages':['corechart']});
+ google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+ var data = google.visualization.arrayToDataTable([
+   ['Task', 'Hours per Day'],
+   ['Thất bại',     50],
+   ['Đang giao',      250],
+   ['Thành công',  300],
+   
+ ]);
+
+ var options = {
+   title: 'Thống kê tình trạng giao hàng'
+ };
+
+ var chart = new google.visualization.PieChart(document.getElementById('piechart-manager1'));
+
+ chart.draw(data, options);
+}

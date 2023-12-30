@@ -67,6 +67,28 @@ function SomeDeleteRowFunction(o) {
 
   });
 
+  document.getElementById("add-nv").addEventListener('click',function(){
+    document.getElementById("piechart-manager").classList.add("none");
+    var table1 = document.getElementById("table1")
+    table1.classList.add("none");
+    document.getElementById("form__create--manager").classList.remove("none");
+    document.getElementById("change__background-manager").classList.add("change__background");
+  });
+
+  document.getElementById("form__close--manager").addEventListener('click',function(){
+    document.getElementById("piechart-manager").classList.add("none");
+    var table1 = document.getElementById("table1")
+    table1.classList.remove("none");
+    document.getElementById("form__create--manager").classList.add("none");
+    document.getElementById("change__background-manager").classList.remove("change__background");
+  });
+  document.getElementById("btn-manager").addEventListener('click',function(){
+    document.getElementById("piechart-manager").classList.add("none");
+    var table1 = document.getElementById("table1")
+    table1.classList.remove("none");
+    document.getElementById("form__create--manager").classList.add("none");
+    document.getElementById("change__background-manager").classList.remove("change__background");
+  });
 
 
   google.charts.load('current', {'packages':['corechart']});
@@ -77,7 +99,7 @@ function drawChart() {
   var data = google.visualization.arrayToDataTable([
     ['Task', 'Hours per Day'],
     ['Thất bại',     50],
-    ['Đã giao',      250],
+    ['Đang giao',      250],
     ['Thành công',  300],
     
   ]);

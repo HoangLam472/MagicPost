@@ -66,13 +66,15 @@
             <table class="table1 none" id="table2" collapse;>
               <thead>
                 <tr>
-                  <th>STT</th>
+                  <th style="width: 20px">STT</th>
                   <th>Mã NV</th>
                   <th>Họ và tên</th>
 
-                  <th style="width: 180px">Số điện thoại</th>
-                  <th style="width: 250px">Chức vụ</th>
+                  <th style="width: 150px">Số điện thoại</th>
+                  <th style="width: 200px">Chức vụ</th>
                   <th>Nơi làm việc</th>
+                  <th>Tài khoản</th>
+                  <th>Mật khẩu</th>
                   <th></th>
                 </tr>
               </thead>
@@ -85,7 +87,9 @@
                   <td>1.2 m</td>
                   <td>0.5 m</td>
                   <td>đfff</td>
-                  <td class="delete" id="delete">xóa</td>
+                  <td>staff1@gmail.com</td>
+                  <td>lamnhucc</td>
+                  <td class="delete" id="delete">delete</td>
                 </tr>
               </tbody>
               <tfoot></tfoot>
@@ -93,7 +97,7 @@
             <div id="change__background-admin">
               <form
                 action="#"
-                class="form__create--admin none"
+                class="form__create--admin "
                 id="form__create--admin"
               >
                 <div class="form__close" id="form__close--admin">
@@ -117,6 +121,14 @@
                 </label>
                 <label>
                   <span>Nơi làm việc</span>
+                  <input type="text" />
+                </label>
+                <label>
+                  <span>Tài khoản</span>
+                  <input type="text" />
+                </label>
+                <label>
+                  <span>Mật khẩu</span>
                   <input type="text" />
                 </label>
                 <button id="btn-admin">Xác nhận</button>

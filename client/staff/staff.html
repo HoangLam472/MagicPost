@@ -10,7 +10,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
   </head>
   <body>
     <div class="staff">
@@ -29,7 +32,7 @@
           <span class="icon--angle" id="list__1--icon"
             ><i class="fa-solid fa-angle-down"></i
           ></span>
-          
+
           <ul class="list__1">
             <li
               class="list__1--items"
@@ -72,7 +75,6 @@
               </ul> -->
             </li>
           </ul>
-          
         </div>
         <div class="staff__container--box">
           <div class="staff__header">
@@ -109,7 +111,7 @@
                   <td style="padding: 3px 10px">
                     <select name="" id="bill-status">
                       <option value="Chưa giao">Giao thất bại</option>
-                      <option value="Đã giao">Đã giao</option>
+                      <option value="Đang giao">Đang giao</option>
                       <option value="Giao thành công">Giao thành công</option>
                     </select>
                   </td>
@@ -136,7 +138,7 @@
                   <td style="padding: 3px 10px">
                     <select name="" id="bill-status">
                       <option value="Chưa giao">Giao thất bại</option>
-                      <option value="Đã giao">Đã giao</option>
+                      <option value="Đang giao">Đang giao</option>
                       <option value="Giao thành công">Giao thành công</option>
                     </select>
                   </td>
@@ -153,8 +155,6 @@
                   <th style="width: 150px">Mã đơn hàng</th>
                   <th style="width: 200px">Tên sản phẩm</th>
                   <th style="width: 200px">Xem Thông tin</th>
-                
-                 
                 </tr>
               </thead>
               <tbody>
@@ -162,8 +162,14 @@
                   <td>1</td>
                   <td>253367747</td>
                   <td>Điện thoại</td>
-                  <td><h3 style="text-decoration: underline; cursor: pointer;" id="view-detail">Xem thông tin chi tiết</h3></td>
-                 
+                  <td>
+                    <h3
+                      style="text-decoration: underline; cursor: pointer"
+                      id="view-detail"
+                    >
+                      Xem thông tin chi tiết
+                    </h3>
+                  </td>
                 </tr>
               </tbody>
               <tfoot></tfoot>
@@ -362,7 +368,7 @@
                   </div>
                   <select name="" id="bill-status">
                     <option value="Chưa giao">Chưa giao</option>
-                    <option value="Đã giao">Đã giao</option>
+                    <option value="Đang giao">Đang giao</option>
                     <option value="Giao thành công">Giao thành công</option>
                   </select>
                 </div>
@@ -372,12 +378,12 @@
                     <h3 style="margin-top: 8px">Cho khách xem hàng</h3>
                   </div>
                 </div>
-              
+
                 <div class="form__box3--battery">
-                    <div style="display: flex">
-                        <input type="checkbox" name="" id="chat-long">
-                        <h3 style="margin-top: 8px;"> Hàng chất lỏng,pin sạc</h3>
-                      </div>
+                  <div style="display: flex">
+                    <input type="checkbox" name="" id="chat-long" />
+                    <h3 style="margin-top: 8px">Hàng chất lỏng,pin sạc</h3>
+                  </div>
                 </div>
                 <hr />
                 <button type="submit" id="create-order">Tạo bưu gửi</button>
@@ -418,7 +424,7 @@
                   <span style="width: 235px">Trạng thái</span>
                   <select name="" id="bill-status">
                     <option value="Chưa giao">Chưa giao</option>
-                    <option value="Đã giao">Đã giao</option>
+                    <option value="Đang giao">Đang giao</option>
                     <option value="Giao thành công">Giao thành công</option>
                   </select>
                 </label>
@@ -431,8 +437,15 @@
               </form>
             </div>
             <div id="change__background--detail">
-              <form action="#" class="staff__form none form__detail" id="form__detail">
-                <div class="form__close form__close--detail" id="form__close--detail">
+              <form
+                action="#"
+                class="staff__form none form__detail"
+                id="form__detail"
+              >
+                <div
+                  class="form__close form__close--detail"
+                  id="form__close--detail"
+                >
                   <i class="fa-solid fa-x"></i>
                 </div>
                 <div class="staff__form--box1">
@@ -626,7 +639,8 @@
                       <h3>Mã bưu gửi</h3>
                       <!-- <span class="important">*</span> -->
                     </div>
-                    <input style="width: 100%;"
+                    <input
+                      style="width: 100%"
                       type="text"
                       id="order-code-detail"
                       placeholder="Mã"
@@ -639,7 +653,7 @@
                     </div>
                     <select name="" id="bill-status-detail">
                       <option value="Chưa giao">Giao thất bại</option>
-                      <option value="Đã giao">Đã giao</option>
+                      <option value="Đang giao">Đang giao</option>
                       <option value="Giao thành công">Giao thành công</option>
                     </select>
                   </div>
@@ -656,7 +670,9 @@
                           <h3 style="margin-top: 8px;"> Hàng chất lỏng,pin sạc</h3>
                         </div>
                   </div> -->
-                  <button type="submit" id="create-order-detail">Xác nhận</button>
+                  <button type="submit" id="create-order-detail">
+                    Xác nhận
+                  </button>
                   <!-- <h3 class="print" id="print" onclick="printForm()">
                     In bưu gửi
                   </h3> -->
@@ -678,9 +694,11 @@
                 </div>
               </form>
             </div>
-            <div id="piechart-staff" class="piechart  "  style="width: calc(100vw -140px); height: calc(100vh - 140px);"></div>
-
-
+            <div
+              id="piechart-staff"
+              class="piechart"
+              style="width: calc(100vw -140px); height: calc(100vh - 140px)"
+            ></div>
           </div>
         </div>
       </div>

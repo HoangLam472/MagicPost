@@ -66,13 +66,13 @@ function get_all_user () {
                     let c4 = document.createElement("td");
                     let c5 = document.createElement("td");
                     let c6 = document.createElement("td");
-    
+                    
                     c1.innerHTML = ++count;
                     c2.innerHTML = objArr[i].userName;
                     c3.innerHTML = objArr[i].email;
                     c4.innerHTML = objArr[i].phone;
                     c5.innerHTML = objArr[i].address ;
-                    c6.innerHTML = '<td><input type="button" value="Delete" onclick="SomeDeleteRowFunction(this)"></td>'
+                    c6.innerHTML = '<td><input type="button" class="delete__nv" value="Delete" onclick="SomeDeleteRowFunction(this)"></td>'
 
     
                     tr.appendChild(c1);

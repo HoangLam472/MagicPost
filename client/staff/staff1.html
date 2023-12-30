@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MagicPost</title>
+    <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/staff1.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+  </head>
+  <body>
+    <div class="staff1">
+      <div class="staff1__container">
+        <div class="staff1__leftbar">
+          <h1 class="staff1__leftbar--title">MagicPost</h1>
+          <!-- <ul class="list__2">
+            <span class="list__2--title" id="list__2--title">Thống kê </span> -->
+          <!-- <span class="icon--angle"
+              ><i class="fa-solid fa-angle-down"></i
+            ></span> -->
+          <!-- </ul> -->
+          <span class="list__1--title" id="list__1--title"
+            >Quản lý đơn hàng
+          </span>
+          <span class="icon--angle" id="list__1--icon"
+            ><i class="fa-solid fa-angle-down"></i
+          ></span>
+
+          <ul class="list__1">
+            <!-- <li
+              class="list__1--items"
+              id="order-recognition"
+              onclick="showForm()"
+            >
+              <span>Ghi nhận đơn hàng</span> -->
+            <!-- <span class="icon--angle"
+                ><i class="fa-solid fa-angle-down"></i
+              ></span> -->
+            <!-- </li> -->
+            <li class="list__1--items">
+              <span id="list__1--items-title1">Tạo đơn hàng</span>
+              <!-- <span class="icon--angle" id="list__1--items-icon1"
+                ><i class="fa-solid fa-angle-down"></i
+              ></span>
+              <ul class="list__1--1">
+                <li class="list__1--1-items" id="list__1--1-items1">
+                  Tới điểm tập kết
+                </li>
+                <li class="list__1--1-items" id="list__1--1-items2">
+                  Tới khách hàng
+                </li>
+              </ul> -->
+            </li>
+            <li class="list__1--items">
+              <span id="list__1--items-title3">Hàng chuyển đến</span>
+            </li>
+            <!-- <li class="list__1--items">
+              <span id="list__1--items-title4">Hàng chuyển đi</span>
+            </li> -->
+            <!-- <li class="list__1--items">
+              <span id="list__1--items-title2">Đơn hàng</span> -->
+            <!-- <span class="icon--angle" id="list__1--items-icon2"
+                ><i class="fa-solid fa-angle-down"></i
+              ></span> -->
+            <!-- <ul class="list__1--2">
+                <li class="list__1--2-items">Xác nhận đơn hàng</li>
+                <li class="list__1--2-items">Kiểm tra đơn hàng</li>
+              </ul> -->
+            <!-- </li> -->
+          </ul>
+        </div>
+        <div class="staff1__container--box">
+          <div class="staff1__header">
+            <div class="icon--menu"><i class="fa-solid fa-bars"></i></div>
+            <!-- <input class="staff1__header--search" type="text" placeholder="Search for..." />
+            <div class="icon--seach">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div> -->
+            <div class="header__user">
+              <div class="icon--user"><i class="fa-solid fa-user"></i></div>
+              <h2 class="staff1__header--text">Staff1</h2>
+            </div>
+
+            <!-- <div class="icon--angle">
+              <i class="fa-solid fa-angle-down"></i>
+            </div> -->
+            <div class="sign_out"><a href="../index.html">Đăng xuất</a></div>
+          </div>
+          <div class="staff1__main">
+            <table class="table1 none" id="table1" collapse;>
+              <thead>
+                <tr>
+                  <th style="width: 50px">STT</th>
+                  <th style="width: 150px">Mã đơn hàng</th>
+                  <th style="width: 200px">Trạng thái</th>
+                  <th>Đến từ</th>
+                  <th style="width: 120px"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>253367747</td>
+                  <td style="padding: 3px 10px">
+                    <select name="" id="bill-status">
+                      <option value="Chưa giao">Giao thất bại</option>
+                      <option value="Đang giao">Đang giao</option>
+                      <option value="Giao thành công">Giao thành công</option>
+                    </select>
+                  </td>
+                  <td>1.2 m</td>
+                  <td style="padding: 3px 10px"><button>Xác nhận</button></td>
+                </tr>
+              </tbody>
+              <tfoot></tfoot>
+            </table>
+            <table class="table2 none" id="table2" collapse;>
+              <thead>
+                <tr>
+                  <th style="width: 50px">STT</th>
+                  <th style="width: 150px">Mã đơn hàng</th>
+                  <th style="width: 200px">Trạng thái</th>
+                  <th>Chuyển đến</th>
+                  <th style="width: 120px"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>253367747</td>
+                  <td style="padding: 3px 10px">
+                    <select name="" id="bill-status">
+                      <option value="Chưa giao">Giao thất bại</option>
+                      <option value="Đang giao">Đang giao</option>
+                      <option value="Giao thành công">Giao thành công</option>
+                    </select>
+                  </td>
+                  <td>1.2 m</td>
+                  <td style="padding: 3px 10px"><button>Xác nhận</button></td>
+                </tr>
+              </tbody>
+              <tfoot></tfoot>
+            </table>
+            <table class="table3 none" id="table3" collapse;>
+              <thead>
+                <tr>
+                  <th style="width: 50px">STT</th>
+                  <th style="width: 150px">Mã đơn hàng</th>
+                  <th style="width: 200px">Tên sản phẩm</th>
+                  <th style="width: 200px">Xem Thông tin</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>253367747</td>
+                  <td>Điện thoại</td>
+                  <td>
+                    <h3
+                      style="text-decoration: underline; cursor: pointer"
+                      id="view-detail"
+                    >
+                      Xem thông tin chi tiết
+                    </h3>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot></tfoot>
+            </table>
+            <form class="staff1__form none" id="staff1__form">
+              <div class="staff1__form--box1">
+                <div class="box1--Sender">
+                  <h1 class="form__box--title">Người gửi</h1>
+                  <hr />
+                  <div class="form__box1--1">
+                    <div class="form__box1--1-user">
+                      <div style="display: flex">
+                        <h3>Họ tên</h3>
+                        <span class="important">*</span>
+                      </div>
+                      <input
+                        type="text"
+                        id="oder-username"
+                        placeholder="Họ tên"
+                      />
+                    </div>
+                    <div class="form__box1--1-phone">
+                      <div style="display: flex">
+                        <h3>Điện thoại</h3>
+                        <span class="important">*</span>
+                      </div>
+                      <input
+                        type="text"
+                        id="order-phone"
+                        placeholder="Điện thoại người gửi"
+                      />
+                    </div>
+                  </div>
+                  <div class="form__box1--address">
+                    <div style="display: flex">
+                      <h3>Địa chỉ</h3>
+                      <span class="important">*</span>
+                    </div>
+                    <input
+                      id="order-address"
+                      type="text"
+                      style="width: 100%"
+                      placeholder="Địa chỉ người gửi"
+                    />
+                  </div>
+                </div>
+                <div class="box1--Receiver">
+                  <h1 class="form__box--title">Người nhận</h1>
+                  <hr />
+                  <div class="form__box1--2">
+                    <div class="form__box1--2-phone">
+                      <div style="display: flex">
+                        <h3>Số điện thoại</h3>
+                        <span class="important">*</span>
+                      </div>
+                      <input
+                        id="recieve-phone"
+                        type="text"
+                        placeholder="Số điện thoại"
+                      />
+                    </div>
+                    <div class="form__box1--2-user">
+                      <div style="display: flex">
+                        <h3>Họ tên</h3>
+                        <span class="important">*</span>
+                      </div>
+                      <input
+                        id="recieve-name"
+                        type="text"
+                        placeholder="Họ tên"
+                      />
+                    </div>
+                  </div>
+                  <div class="form__box1--address">
+                    <div style="display: flex">
+                      <h3>Địa chỉ</h3>
+                      <span class="important">*</span>
+                    </div>
+                    <input
+                      id="recieve-address"
+                      type="text"
+                      style="width: 100%"
+                      placeholder="Địa chỉ người nhận"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="staff1__form--box2">
+                <h1 class="form__box--title">Thông tin bưu gửi</h1>
+                <hr />
+                <div class="form__box2--product">
+                  <div style="display: flex">
+                    <h3>Tên sản phẩm</h3>
+                    <span class="important">*</span>
+                  </div>
+                  <input
+                    id="product-name"
+                    type="text"
+                    style="width: 100%"
+                    placeholder="Tên sản phẩm"
+                  />
+                </div>
+                <div class="form__box2--1">
+                  <div class="form__box2--1-price">
+                    <div style="display: flex">
+                      <h3>Giá</h3>
+                      <span class="important">*</span>
+                    </div>
+                    <input
+                      id="product-price"
+                      type="text"
+                      style="width: 98%"
+                      placeholder="vnd"
+                    />
+                  </div>
+                  <div class="form__box2--1-mass">
+                    <div style="display: flex">
+                      <h3>Khối lượng</h3>
+                      <span class="important">*</span>
+                    </div>
+                    <input
+                      id="product-kl"
+                      type="text"
+                      style="width: 98%"
+                      placeholder="gram"
+                    />
+                  </div>
+                  <div class="form__box2--1-quantity">
+                    <div style="display: flex">
+                      <h3>Số lượng</h3>
+                      <span class="important">*</span>
+                    </div>
+                    <input
+                      id="product-quantity"
+                      type="text"
+                      placeholder=""
+                      style="width: 100%"
+                    />
+                  </div>
+                </div>
+                <div class="form__box2--2">
+                  <div class="form__box2--2-length">
+                    <div style="display: flex">
+                      <h3>Kích thước</h3>
+                      <span class="important">*</span>
+                    </div>
+                    <input
+                      id="product-length"
+                      type="text"
+                      placeholder="Dài(cm)"
+                      style="width: 100%"
+                    />
+                  </div>
+                  <div class="form__box2--2-width">
+                    <div style="display: flex">
+                      <h3>dgds</h3>
+                      <span class="important"></span>
+                    </div>
+                    <input
+                      id="product-rong"
+                      type="text"
+                      placeholder="Rộng(cm)"
+                      style="width: 100%"
+                    />
+                  </div>
+                  <div class="form__box2--2-high">
+                    <div style="display: flex">
+                      <h3>ffg</h3>
+                      <span class="important"></span>
+                    </div>
+                    <input
+                      id="product-heigh"
+                      type="text"
+                      placeholder="Cao(cm)"
+                      style="width: 100%"
+                    />
+                  </div>
+                </div>
+                <div class="form__box2--note">
+                  <h3>Ghi chú</h3>
+                  <textarea
+                    name=""
+                    id="order-note"
+                    cols="30"
+                    rows="4"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="staff1__form--box3">
+                <h1 class="form__box--title">Bưu gửi</h1>
+                <hr />
+                <div class="form__box3--status">
+                  <div style="display: flex">
+                    <h3>Tình trạng vận chuyển</h3>
+                    <span class="important">*</span>
+                  </div>
+                  <select name="" id="bill-status">
+                    <option value="Chưa giao">Chưa giao</option>
+                    <option value="Đang giao">Đang giao</option>
+                    <option value="Giao thành công">Giao thành công</option>
+                  </select>
+                </div>
+                <div class="form__box3--customercheck">
+                  <div style="display: flex; margin-top: 20px">
+                    <input type="checkbox" name="" id="cho-xem" />
+                    <h3 style="margin-top: 8px">Cho khách xem hàng</h3>
+                  </div>
+                </div>
+
+                <div class="form__box3--battery">
+                  <div style="display: flex">
+                    <input type="checkbox" name="" id="chat-long" />
+                    <h3 style="margin-top: 8px">Hàng chất lỏng,pin sạc</h3>
+                  </div>
+                </div>
+                <hr />
+                <button type="submit" id="create-order">Tạo bưu gửi</button>
+                <h3 class="print" id="print" onclick="printForm()">
+                  In bưu gửi
+                </h3>
+                <div class="product-sign" style="text-align: center">
+                  <h3>Ngày nhận</h3>
+                  <span style="color: black">..../..../....</span>
+                  <br />
+                  <h3 style="transform: translateY(-10px)">Người nhận</h3>
+                  <h4
+                    style="
+                      color: black;
+                      font-size: 11px;
+                      transform: translateY(-12px);
+                    "
+                  >
+                    ký tên
+                  </h4>
+                </div>
+              </div>
+            </form>
+            <div id="change__background">
+              <form
+                action="#"
+                class="form__create--oder none"
+                id="form__create--oder"
+              >
+                <div class="form__close" id="form__close">
+                  <i class="fa-solid fa-x"></i>
+                </div>
+                <label>
+                  <span>Mã đơn hàng</span>
+                  <input type="text" />
+                </label>
+                <label style="display: flex">
+                  <span style="width: 235px">Trạng thái</span>
+                  <select name="" id="bill-status">
+                    <option value="Chưa giao">Chưa giao</option>
+                    <option value="Đang giao">Đang giao</option>
+                    <option value="Giao thành công">Giao thành công</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Chuyển tới</span>
+                  <input type="text" />
+                </label>
+
+                <button>Xác nhận</button>
+              </form>
+            </div>
+            <div id="change__background--detail">
+              <form
+                action="#"
+                class="staff1__form none form__detail"
+                id="form__detail"
+              >
+                <div
+                  class="form__close form__close--detail"
+                  id="form__close--detail"
+                >
+                  <i class="fa-solid fa-x"></i>
+                </div>
+                <div class="staff1__form--box1">
+                  <div class="box1--Sender">
+                    <h1 class="form__box--title">Người gửi</h1>
+                    <hr />
+                    <div class="form__box1--1">
+                      <div class="form__box1--1-user">
+                        <div style="display: flex">
+                          <h3>Họ tên</h3>
+                          <!-- <span class="important">*</span> -->
+                        </div>
+                        <input
+                          type="text"
+                          id="oder-username-detail"
+                          placeholder="Họ tên"
+                        />
+                      </div>
+                      <div class="form__box1--1-phone">
+                        <div style="display: flex">
+                          <h3>Điện thoại</h3>
+                          <!-- <span class="important">*</span> -->
+                        </div>
+                        <input
+                          type="text"
+                          id="order-phone-detail"
+                          placeholder="Điện thoại người gửi"
+                        />
+                      </div>
+                    </div>
+                    <div class="form__box1--address">
+                      <div style="display: flex">
+                        <h3>Địa chỉ</h3>
+                        <!-- <span class="important">*</span> -->
+                      </div>
+                      <input
+                        id="order-address-detail"
+                        type="text"
+                        style="width: 100%"
+                        placeholder="Địa chỉ người gửi"
+                      />
+                    </div>
+                  </div>
+                  <div class="box1--Receiver">
+                    <h1 class="form__box--title">Người nhận</h1>
+                    <hr />
+                    <div class="form__box1--2">
+                      <div class="form__box1--2-phone">
+                        <div style="display: flex">
+                          <h3>Số điện thoại</h3>
+                          <!-- <span class="important">*</span> -->
+                        </div>
+                        <input
+                          id="recieve-phone-detail"
+                          type="text"
+                          placeholder="Số điện thoại"
+                        />
+                      </div>
+                      <div class="form__box1--2-user">
+                        <div style="display: flex">
+                          <h3>Họ tên</h3>
+                          <!-- <span class="important">*</span> -->
+                        </div>
+                        <input
+                          id="recieve-name-detail"
+                          type="text"
+                          placeholder="Họ tên"
+                        />
+                      </div>
+                    </div>
+                    <div class="form__box1--address">
+                      <div style="display: flex">
+                        <h3>Địa chỉ</h3>
+                        <!-- <span class="important">*</span> -->
+                      </div>
+                      <input
+                        id="recieve-address-detail"
+                        type="text"
+                        style="width: 100%"
+                        placeholder="Địa chỉ người nhận"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="staff1__form--box2">
+                  <h1 class="form__box--title">Thông tin bưu gửi</h1>
+                  <hr />
+                  <div class="form__box2--product">
+                    <div style="display: flex">
+                      <h3>Tên sản phẩm</h3>
+                      <!-- <span class="important">*</span> -->
+                    </div>
+                    <input
+                      id="product-name-detail"
+                      type="text"
+                      style="width: 100%"
+                      placeholder="Tên sản phẩm"
+                    />
+                  </div>
+                  <div class="form__box2--1">
+                    <div class="form__box2--1-price">
+                      <div style="display: flex">
+                        <h3>Giá</h3>
+                        <!-- <span class="important">*</span> -->
+                      </div>
+                      <input
+                        id="product-price-detail"
+                        type="text"
+                        style="width: 98%"
+                        placeholder="vnd"
+                      />
+                    </div>
+                    <div class="form__box2--1-mass">
+                      <div style="display: flex">
+                        <h3>Khối lượng</h3>
+                        <!-- <span class="important">*</span> -->
+                      </div>
+                      <input
+                        id="product-kl-detail"
+                        type="text"
+                        style="width: 98%"
+                        placeholder="gram"
+                      />
+                    </div>
+                    <div class="form__box2--1-quantity">
+                      <div style="display: flex">
+                        <h3>Số lượng</h3>
+                        <!-- <span class="important">*</span> -->
+                      </div>
+                      <input
+                        id="product-quantity-detail"
+                        type="text"
+                        placeholder=""
+                        style="width: 100%"
+                      />
+                    </div>
+                  </div>
+                  <div class="form__box2--2">
+                    <div class="form__box2--2-length">
+                      <div style="display: flex">
+                        <h3>Kích thước</h3>
+                        <!-- <span class="important">*</span> -->
+                      </div>
+                      <input
+                        id="product-length-detail"
+                        type="text"
+                        placeholder="Dài(cm)"
+                        style="width: 100%"
+                      />
+                    </div>
+                    <div class="form__box2--2-width">
+                      <div style="display: flex">
+                        <h3>dgds</h3>
+                        <!-- <span class="important"></span> -->
+                      </div>
+                      <input
+                        id="product-rong-detail"
+                        type="text"
+                        placeholder="Rộng(cm)"
+                        style="width: 100%"
+                      />
+                    </div>
+                    <div class="form__box2--2-high">
+                      <div style="display: flex">
+                        <h3>ffg</h3>
+                        <!-- <span class="important"></span> -->
+                      </div>
+                      <input
+                        id="product-heigh-detail"
+                        type="text"
+                        placeholder="Cao(cm)"
+                        style="width: 100%"
+                      />
+                    </div>
+                  </div>
+                  <div class="form__box2--note">
+                    <h3>Ghi chú</h3>
+                    <textarea
+                      name=""
+                      id="order-note-detail"
+                      cols="30"
+                      rows="4"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="staff1__form--box3">
+                  <h1 class="form__box--title">Bưu gửi</h1>
+                  <hr />
+                  <div class="form__box3--code">
+                    <div style="display: flex">
+                      <h3>Mã bưu gửi</h3>
+                      <!-- <span class="important">*</span> -->
+                    </div>
+                    <input
+                      style="width: 100%"
+                      type="text"
+                      id="order-code-detail"
+                      placeholder="Mã"
+                    />
+                  </div>
+                  <div class="form__box3--status">
+                    <div style="display: flex">
+                      <h3>Tình trạng vận chuyển</h3>
+                      <!-- <span class="important">*</span> -->
+                    </div>
+                    <select name="" id="bill-status-detail">
+                      <option value="Chưa giao">Giao thất bại</option>
+                      <option value="Đang giao">Đang giao</option>
+                      <option value="Giao thành công">Giao thành công</option>
+                    </select>
+                  </div>
+                  <div class="form__box3--customercheck">
+                    <div style="display: flex; margin-top: 20px">
+                      <input type="checkbox" name="" id="cho-xem-detail" />
+                      <h3 style="margin-top: 8px">Cho khách xem hàng</h3>
+                    </div>
+                  </div>
+                  <hr />
+                  <!-- <div class="form__box3--battery">
+                      <div style="display: flex">
+                          <input type="checkbox" name="" id="chat-long">
+                          <h3 style="margin-top: 8px;"> Hàng chất lỏng,pin sạc</h3>
+                        </div>
+                  </div> -->
+                  <button type="submit" id="create-order-detail">
+                    Xác nhận
+                  </button>
+                  <!-- <h3 class="print" id="print" onclick="printForm()">
+                    In bưu gửi
+                  </h3> -->
+                  <!-- <div class="product-sign" style="text-align: center">
+                    <h3>Ngày nhận</h3>
+                    <span style="color: black">..../..../....</span>
+                    <br />
+                    <h3 style="transform: translateY(-10px)">Người nhận</h3>
+                    <h4
+                      style="
+                        color: black;
+                        font-size: 11px;
+                        transform: translateY(-12px);
+                      "
+                    >
+                      ký tên
+                    </h4>
+                  </div> -->
+                </div>
+              </form>
+            </div>
+            <!-- <div id="piechart-staff1" class="piechart  "  style="width: calc(100vw -140px); height: calc(100vh - 140px);"></div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/staff1.js"></script>
+    <script type="module" src="../js/order.api.js"></script>
+  </body>
+</html>

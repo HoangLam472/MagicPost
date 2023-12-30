@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MagicPost</title>
     <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/manager11.css">
+    <link rel="stylesheet" href="../css/manager1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+   
 </head>
 <body>
     <div class="manager1">
@@ -15,6 +18,11 @@
                 <h1 class="manager1__leftbar--title">
                     MagicPost
                 </h1>
+                <ul class="list__2">
+                    <span class="list__2--title" id="list__2--title">Thống kê </span>
+                    <!-- <span class="icon--angle"><i class="fa-solid fa-angle-down"></i></span> -->
+                </ul>
+
                 <span class="list__1--title" id="list__1--title">Quản lý nhân viên </span>
                 <!-- <span class="icon--angle" id="list__1--icon"><i class="fa-solid fa-angle-down"></i></span> -->
                 <!-- <ul class="list__1">
@@ -24,11 +32,7 @@
                         <span id="list__1--items-title2">Thêm nhân viên</span>   
                     </li>
                 </ul> -->
-                <ul class="list__2">
-                    <span class="list__2--title">Thống kê </span>
-                    <!-- <span class="icon--angle"><i class="fa-solid fa-angle-down"></i></span> -->
-                </ul>
-
+                
             </div>
             <div class="manager1__container--box">
                 <div class="manager1__header">
@@ -46,6 +50,7 @@
                 <div class="manager1__main">
                     <div id="table1" class="table1 none">
                         <button id="update-list-user" class="btn s-full-width js-buy-ticket">Cập nhật</button>
+                        <button id="add-nv" class="btn s-full-width js-buy-ticket" style="margin-left:10px ;">Thêm nhân viên</button>
                         <table id="tb-danh-sach-nhan-vien" collapse;>
                             <thead>
                                 <tr>
@@ -59,14 +64,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>253367747</td>
-                                    <td>45 kg</td>
-                                    <td>1.2 m</td>
-                                    <td>0.5 m</td>
+                                <!-- <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td><input type="button" value="Delete" onclick="SomeDeleteRowFunction(this)"></td>
-                                </tr>
+                                </tr> -->
                                 
                             </tbody>
                             <tfoot></tfoot>
@@ -74,6 +79,7 @@
                     </div>
                     <div class="table1 none" id="table2">
                         <button id="add-user-btn" class="btn s-full-width js-buy-ticket">Thêm nhân viên</button>
+                      
                         <table collapse;>
                             <thead>
                                 <tr>
@@ -82,6 +88,8 @@
                                     <th>Email</th>
                                     <th>Số điện thoại</th>
                                     <th>Địa chỉ</th>
+                                    <th>Tài khoản</th>
+                                    <th>Mật khẩu</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -137,7 +145,44 @@
                             </div>
                           
                           </div>
+
+                          
                     </div>
+                    <div id="change__background-manager1">
+                        <form
+                          action="#"
+                          class="form__create--manager1 none"
+                          id="form__create--manager1"
+                        >
+                          <div class="form__close" id="form__close--manager1">
+                            <i class="fa-solid fa-x"></i>
+                          </div>
+                          <label>
+                            <span>Mã nhân viên</span>
+                            <input type="text" />
+                          </label>
+                          <label>
+                            <span>Họ và tên</span>
+                            <input type="text" />
+                          </label>
+                          <label>
+                            <span>Số điện thoại</span>
+                            <input type="text" />
+                          </label>
+                         
+                          <label>
+                            <span>Tài khoản</span>
+                            <input type="text" />
+                          </label>
+                          <label>
+                            <span>Mật khẩu</span>
+                            <input type="text" />
+                          </label>
+                          <button id="btn-manager1">Xác nhận</button>
+                        </form>
+                      </div>
+
+                    <div id="piechart-manager1" class="piechart  "  style="width: calc(100vw -140px); height: calc(100vh - 140px);"></div>
                 </div>
             </div>
             

@@ -169,7 +169,7 @@ function drawChart() {
   var data = google.visualization.arrayToDataTable([
     ['Task', 'Hours per Day'],
     ['Thất bại',     50],
-    ['Đã giao',      250],
+    ['Đang giao',      250],
     ['Thành công',  300],
     
   ]);
