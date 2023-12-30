@@ -204,6 +204,7 @@ document.getElementById("dialog__change--backgrond-staff1-2").classList.add("cha
 document.getElementById("confirm-69").addEventListener('click',function(){
 document.getElementById("dialog__create--order-staff1-2").classList.add("none");
 document.getElementById("dialog__change--backgrond-staff1-2").classList.remove("change__background");
+document.getElementById("delete-row").classList.add("none");
 });
 
 document.getElementById("confirm-4").addEventListener('click',function(){
