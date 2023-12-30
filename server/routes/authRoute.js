@@ -22,7 +22,7 @@ const {
   isAdmin,
 } = require("../middleware/authMiddleware");
 
-router.post("/register/:id", registerUser);
+router.post("/register", authMiddleware, registerUser);
 router.post("/register-leader/:id", authMiddleware, isAdmin, registerLeader);
 router.post("/login-Transactionpointstaff", loginTransactionpointstaffController);
 router.post("/login-Assemblypointstaff", loginAssemblypointstaffController);
@@ -35,7 +35,7 @@ router.post(
 router.post("/edit-state/:id", authMiddleware, isPointLeader, updateUserStatus);
 
 router.get("/logout", logout);
-router.get("/all-users",    getAllUsers);
+router.get("/all-users", authMiddleware, getAllUsers);
 router.get("/all-leader", authMiddleware, isAdmin, getAllLeader);
 
 router.put("/edit-user", authMiddleware, updateUser);

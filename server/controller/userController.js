@@ -15,15 +15,13 @@ const { generateRefreshToken } = require("../config/refreshtoken");
 // Register Staff
 const registerUser = asyncHandler(async (req, res) => {
   const email = req.body.email;
-  const { id } = req.params;
+  const p_id = req.user.postOfficeId
   const findUser = await User.findOne({ email });
-  const findPoint = await Point.findOne({ _id: id });
-  console.log(findUser, findPoint);
-  if (!findUser && findPoint) {
+  if (!findUser) {
     // Create a new user
     const newUser = await User.create({
       ...req.body,
-      postOfficeId: id,
+      postOfficeId: p_id,
     });
     res.json(newUser);
   } else {
@@ -276,10 +274,14 @@ const logout = asyncHandler(async (req, res) => {
 // Get All Users
 
 const getAllUsers = asyncHandler(async (req, res, next) => {
+  const point_id = req.user.postOfficeId;
+  if (!point_id) {
+    throw new Error('Không tìm thấy PostOfficeId trong tài khoản này')
+  }
+
   try {
     const getUsers = await User.find({
-      // role: "null",
-      // postOfficeId: req.user.postOfficeId,
+      postOfficeId: point_id,
     });
     res.json(getUsers);
   } catch (err) {

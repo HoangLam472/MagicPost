@@ -77,80 +77,8 @@
                             <tfoot></tfoot>
                         </table>
                     </div>
-                    <div class="table1 none" id="table2">
-                        <button id="add-user-btn" class="btn s-full-width js-buy-ticket">Thêm nhân viên</button>
-                      
-                        <table collapse;>
-                            <thead>
-                                <tr>
-                                    <th>STT</th>
-                                    <th>Họ và tên</th>
-                                    <th>Email</th>
-                                    <th>Số điện thoại</th>
-                                    <th>Địa chỉ</th>
-                                    <th>Tài khoản</th>
-                                    <th>Mật khẩu</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>LAM</td>
-                                    <td>LAM</td>
-                                    <td>1.2 m</td>
-                                    <td>0.5 m</td>
-                                </tr>
-                                
-                            </tbody>
-                            <tfoot></tfoot>
-                        </table>
-
-                        <div id="myModal" class="modal">
-
-                            <!-- Modal content -->
-                            <div class="modal-content">
-                              <span class="close">&times;</span>
-                              <h3>Thêm nhân viên</h3>
-                              <form>
-                                <div class="txt_field">
-                                    <select name="option" id="point-option"></select>
-                                    <div>
-                                        <input type="text" id="add-username" required />
-                                        <span></span>
-                                        <label>Username</label>
-                                    </div>
-                                    <div>
-                                        <input type="text" id="add-email" required />
-                                        <span></span>
-                                        <label>Email</label>
-                                    </div>
-                                    <div>
-                                        <input type="text" id="add-address" required />
-                                        <span></span>
-                                        <label>Address</label>
-                                    </div>
-                                    <div>
-                                        <input type="text" id="add-phone" required />
-                                        <span></span>
-                                        <label>Phone</label>
-                                    </div>
-                                    <div>
-                                        <input type="text" id="add-password" required />
-                                        <span></span>
-                                        <label>Password</label>
-                                    </div>
-                                </div>
-                              </form>
-                              <button id="add-user">Thêm</button>
-                            </div>
-                          
-                          </div>
-
-                          
-                    </div>
                     <div id="change__background-manager">
                         <form
-                          action="#"
                           class="form__create--manager none"
                           id="form__create--manager"
                         >
@@ -158,25 +86,25 @@
                             <i class="fa-solid fa-x"></i>
                           </div>
                           <label>
-                            <span>Mã nhân viên</span>
-                            <input type="text" />
+                            <span>Email</span>
+                            <input type="text" id="add-email" />
                           </label>
                           <label>
                             <span>Họ và tên</span>
-                            <input type="text" />
+                            <input type="text" id="add-username"/>
                           </label>
                           <label>
                             <span>Số điện thoại</span>
-                            <input type="text" />
+                            <input type="text" id="add-phone" />
                           </label>
                           
                           <label>
-                            <span>Tài khoản</span>
-                            <input type="text" />
+                            <span>Địa chỉ</span>
+                            <input type="text" id="add-address"  />
                           </label>
                           <label>
                             <span>Mật khẩu</span>
-                            <input type="text" />
+                            <input type="text" id="add-password"/>
                           </label>
                           <button id="btn-manager">Xác nhận</button>
                         </form>

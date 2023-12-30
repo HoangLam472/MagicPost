@@ -397,3 +397,11 @@ label span{
 /* .piechart{
     display: block;
 } */
+
+#add-point-option {
+    color: #000 !important
+}
+
+option {
+    color: #000
+};
