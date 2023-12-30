@@ -104,10 +104,6 @@ function SomeDeleteRowFunction(o) {
     document.getElementById("dialog__create--order-manager-1").classList.add("none");
   });
 
-
-
-
-
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
 
