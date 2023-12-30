@@ -364,16 +364,11 @@
                 <h1 class="form__box--title">Bưu gửi</h1>
                 <hr />
                 <div class="form__box3--code">
-                  <div style="display: flex">
+                  <div style="display: flex; justify-content: space-between; width: 80%;">
                     <h3 style="margin-top: 5px;">Mã bưu gửi</h3>
-                    <!-- <span class="important">*</span> -->
+                    <div id="order-qrcode-detail"></div>
                   </div>
-                  <input
-                    style="width: 85%; margin-left: 10px;"
-                    type="text"
-                    id="order-code-detail"
-                    placeholder="Mã"
-                  />
+                  
                 </div>
                 <div class="form__box3--status">
                   <div style="display: flex">
@@ -428,7 +423,6 @@
             </form>
             <div id="change__background">
               <form
-                action="#"
                 class="form__create--oder none"
                 id="form__create--oder"
               >
@@ -797,6 +791,9 @@
         </div>
       </div>
     </div>
+    <script src=
+        "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+    </script>
     <script src="../js/staff.js"></script>
     <script type="module" src="../js/order.api.js"></script>
     <script type="module" src="../js/staff_order.js"></script>
