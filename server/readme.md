@@ -21,6 +21,10 @@ http://localhost:8080/api/user/all-leader              lấy toàn bộ leader<b
 method: put<br>
 http://localhost:8080/api/user/edit-user              chỉnh sửa user<br><br>
 
+method: delete <br>
+http://localhost:8080/api/user/delete-user/:id        // leader xóa nhân viên<br>
+http://localhost:8080/api/user/delete-leader/:id       // admin xóa leader <br>
+
 # Các API point:
 method: post<br>
 http://localhost:8080/api/point                tạo point mới<br><br>
