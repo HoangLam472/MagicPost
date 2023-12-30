@@ -62,7 +62,7 @@ document.getElementById("form__close--admin").addEventListener('click',function(
           ['Task', 'Hours per Day'],
          
           ['Hàng gửi',      1500],
-          ['Thành nhận',  3500],
+          ['Hàng nhận',  3500],
           
         ]);
 
