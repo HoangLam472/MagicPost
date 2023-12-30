@@ -344,6 +344,20 @@ const deleteUser = asyncHandler(async (req, res, next) => {
   }
 });
 
+// DELETE
+
+const deleteUsers = asyncHandler(async (req, res, next) => {
+  const { id } = req.params;
+  console.log(id);
+  try {
+    validateMongoDbId(id);
+    const deleteUser = await User.findByIdAndDelete(id);
+    res.json(deleteUser);
+  } catch (err) {
+    throw new Error(err);
+  }
+});
+
 // UPDATE
 
 const updateUser = asyncHandler(async (req, res, next) => {
@@ -397,6 +411,7 @@ module.exports = {
   loginHeadOfTransactionPointController,
   logout,
   updateUser,
+  deleteUsers,
   updateUserStatus,
   getAllUsers,
   getAllLeader,
