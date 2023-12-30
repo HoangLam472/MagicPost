@@ -251,3 +251,15 @@ label span{
 .none{
     display: none;
 }
+
+#select-2 {
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: #000 !important
+}
+
+#select-2:focus-visible {
+    border: none;
+    outline: none;
+}

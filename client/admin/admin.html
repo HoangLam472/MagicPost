@@ -43,7 +43,7 @@
                     <div class="icon--seach"><i class="fa-solid fa-magnifying-glass"></i></div> -->
             <div class="header__user">
               <div class="icon--user"><i class="fa-solid fa-user"></i></div>
-              <h2 class="manager__header--text">Admin</h2>
+              <h2 class="manager__header--text" id="admin-name">Admin</h2>
             </div>
 
             <!-- <div class="icon--angle"><i class="fa-solid fa-angle-down"></i></div> -->
@@ -52,7 +52,6 @@
           <div class="manager__main">
             <div  id="add--refresh" class="none add--refresh">
               <button
-                href="#"
                 class="btn s-full-width js-buy-ticket"
                 id="btn__add-admin"
               >
@@ -96,7 +95,6 @@
             </table>
             <div id="change__background-admin">
               <form
-                action="#"
                 class="form__create--admin none"
                 id="form__create--admin"
               >
@@ -131,10 +129,19 @@
                   <span>Mật khẩu</span>
                   <input type="text" />
                 </label>
-                <button id="btn-admin">Xác nhận</button>
+                <button type="button" id="btn-admin">Xác nhận</button>
               </form>
             </div>
-            <div id="piechart" class="piechart  "  style="width: calc(100vw -140px); height: calc(100vh - 140px);"></div>
+            <div id="page-2"  class="piechart  " >
+              <select id="select-2" value="k1">
+                <option value="k1">Toàn quốc</option>
+                <option value="k2">Điểm giao dịch 1</option>
+                <option value="k4">Điểm giao dịch 2</option>
+                <option value="k3">Điểm tập kết 1</option>
+              </select>
+              <div id="piechart" style="width: calc(100vw -140px); height: calc(100vh - 140px);"></div>
+            </div>
+            
 
             <div id="dialog__change--backgrond-admin-1" class="dialog__change--backgrond-admin">
               <div class="dialog__create--order-admin none"  id="dialog__create--order-admin-1">
@@ -159,5 +166,6 @@
       </div>
     </div>
     <script src="../js/admin.js"></script>
+    <script src="../js/header_name.js"></script>
   </body>
 </html>
