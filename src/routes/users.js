@@ -1,13 +1,11 @@
 const express = require('express')
 const router = express.Router()
-
-
+// const { authenticateToken } = require('../middlewares/authMiddleware');
 const usercontrollers = require('../app/controllers/UserControllers')
 
-router.use('/createemployee', usercontrollers.createepe)
-router.use('/createpointmanager', usercontrollers.createpmr)
-router.post('/createemployee/:pointManagerId', usercontrollers.createemployee)
-router.post('/createpointmanager', usercontrollers.createpointmanager)
-router.get('/', usercontrollers.user)
+router.get('/find', usercontrollers.finds)
+router.use('/create', usercontrollers.createUser)
+router.get('/alluser', usercontrollers.user)
+
 
 module.exports = router;

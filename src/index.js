@@ -4,6 +4,8 @@ const path = require('path');
 const handlebars = require('express-handlebars')
 const route = require('./routes')
 const db = require('./config/db')
+require("dotenv").config();
+const session = require('express-session')
 
 // connect to db
 db.connect();
@@ -18,11 +20,19 @@ app.use(express.urlencoded({
 ));
 app.use(express.json());
 
+
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: true,
+  saveUninitialized: true,
+}))
+
 // template engine
 app.engine('hbs', handlebars.engine({
   extname: '.hbs'
 }
 ));
+
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 

@@ -23,10 +23,14 @@
   "homepage": "https://github.com/HoangLam472/MagicPost#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "dotenv": "^16.3.1",
     "express-session": "^1.17.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.3.0",
     "morgan": "^1.10.0",
     "passport": "^0.7.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "util": "^0.12.5"
   },
   "devDependencies": {
     "express": "^4.18.2",

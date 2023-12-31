@@ -1,0 +1,54 @@
+<h2>Order Information</h2>
+<form action="/create-order" method="post">
+  <h3>Sender Information</h3>
+  <label for="senderFullName">Sender's Full Name:</label>
+  <input type="text" id="senderFullName" name="sender[fullName]" required>
+
+  <label for="senderPhoneNumber">Sender's Phone Number:</label>
+  <input type="text" id="senderPhoneNumber" name="sender[phoneNumber]" required>
+
+  <label for="senderAddress">Sender's Address:</label>
+  <input type="text" id="senderAddress" name="sender[address]" required>
+
+  <h3>Recipient Information</h3>
+  <label for="recipientFullName">Recipient's Full Name:</label>
+  <input type="text" id="recipientFullName" name="recipient[fullName]" required>
+
+  <label for="recipientPhoneNumber">Recipient's Phone Number:</label>
+  <input type="text" id="recipientPhoneNumber" name="recipient[phoneNumber]" required>
+
+  <label for="recipientAddress">Recipient's Address:</label>
+  <input type="text" id="recipientAddress" name="recipient[address]" required>
+
+  <h3>Shipment Information</h3>
+  <label for="productName">Product Name:</label>
+  <input type="text" id="productName" name="shipmentInfo[productName]" required>
+
+  <label for="value">Value:</label>
+  <input type="number" id="value" name="shipmentInfo[value]" required>
+
+  <label for="weight">Weight:</label>
+  <input type="number" id="weight" name="shipmentInfo[weight]" required>
+
+  <label for="quantity">Quantity:</label>
+  <input type="number" id="quantity" name="shipmentInfo[quantity]" required>
+
+  <label for="note">Note:</label>
+  <textarea id="note" name="shipmentInfo[note]"></textarea>
+
+  <h3>Status</h3>
+  <label for="status">Status:</label>
+  <input type="text" id="status" name="status" value="pending" readonly>
+
+  <h3>Tracking Info</h3>
+  <!-- Không có trường dữ liệu cho trackingInfo -->
+
+  <h3>Point Manager Stats</h3>
+  <label for="sentQuantity">Sent Quantity:</label>
+  <input type="number" id="sentQuantity" name="pointManagerStats[0].pointManager1.sentQuantity" value="0" readonly>
+
+  <label for="receivedQuantity">Received Quantity:</label>
+  <input type="number" id="receivedQuantity" name="pointManagerStats[0].pointManager1.receivedQuantity" value="0" readonly>
+
+  <button type="submit">Submit</button>
+</form>

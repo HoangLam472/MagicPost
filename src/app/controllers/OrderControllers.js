@@ -7,9 +7,13 @@ class OrderControllers {
       .then((oders) => res.json(oders))
       .catch(next);
   }
-
+// get / create order
   create(req, res, next) {
-    res.render("create");
+    res.render("createorder");
+  }
+// get update order
+  update(req, res, next) {
+    res.render("updateinfo");
   }
 
   store(req, res, next) {
@@ -21,8 +25,24 @@ class OrderControllers {
     res.json(req.body);
   }
 
+  // tạo oder mới (chưa test)
+  createorder(req, res, next) {
+    const orderData = req.body;
+    const newOrder = new Order(orderData);
+
+    newOrder
+      .save()
+      .then((savedOrder) => {
+        res.json(savedOrder);
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+      });
+  }
+
   // cập nhật dữ liệu tracking info và pointmanagerstar ( đang bug)
-  updateOrder(req, tes, next) {
+  updateorder(req, tes, next) {
     const orderId = req.params.orderId;
     const newTrackingInfoData = req.body.trackingInfo;
     const pointManagerId1 = req.body.pointManagerId1;

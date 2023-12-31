@@ -1,63 +1,78 @@
-const Users = require("../models/users")
-
+const Users = require("../models/user");
 
 class UserControllers {
-    // get /user
-    user(req, res, next) {
-        Users.find({})
-        .then(users => res.json(users))
-        .catch(next)
-    }
-
-    createepe(req, res, next) {
-        res.render('createemployee');
-    }
-    createpmr(req, res, next) {
-      res.render('createmanager');
+  // get /user lấy toàn bộ tài khoản
+  user(req, res, next) {
+    Users.find({})
+      .then((users) => {
+        if (!users) {
+          console.log("No users found."); // Log for debugging
+          return res.json([]); // Return an empty array if no users
+        }
+  
+        console.log("Users found:", users); // Log for debugging
+        res.json(users);
+      })
+      .catch((error) => {
+        console.error("Error fetching users:", error); // Log for debugging
+        next(error);
+      });
   }
-    // post/ user/ pointmanager tạo tài khoản mới
-    createemployee(req, res, next) {
-        const pointManagerId = req.params.pointManagerId;
-         const newEmployeeData = req.body;
-         Users.updateOne(
-            { 'managedAccounts._id': pointManagerId },
-            { $push: { 'managedAccounts.$.managedEmployees': newEmployeeData } }
-          )
-            .then(() => {
-              res.status(200).send('Employee added to pointManager successfully');
-            })
-            .catch((error) => {
-              console.error('Error adding Employee to pointManager:', error);
-              res.status(500).send('Internal Server Error');
-            });
-        // res.json(req.query.pointManagerId)
-        // res.send(req.body)
+  
 
-    }
-
-    createpointmanager(req, res, next) {
-      const pointManagerId = req.params.pointManagerId;
-       const newPointManagerData = req.body;
-       Users.updateOne(
-        { 'managedAccounts._id': pointManagerId },
-        {
-          $push: {
-            'managedAccounts': newPointManagerData,
-          },
-        },
-        )
-          .then(() => {
-            res.status(200).send('Employee added to pointManager successfully');
-          })
-          .catch((error) => {
-            console.error('Error adding Employee to pointManager:', error);
-            res.status(500).send('Internal Server Error');
-          });
-      // res.json(req.query.pointManagerId)
-      // res.send(req.body)
-
+  createepe(req, res, next) {
+    res.render("createemployee");
+  }
+  createpmr(req, res, next) {
+    res.render("createmanager");
   }
 
+
+  // post/ tạo tài khoản mới
+   createUser(req, res, next) {
+    const { userName, password, role, location } = req.body;
+
+  const newUser = new Users({
+    userName,
+    password,
+    role,
+    location,
+  });
+  newUser.save()
+    .then(savedUser => {
+      // Respond with the saved user
+      res.json(savedUser);
+    })
+    .catch(error => {
+      // Handle errors
+      console.error(error);
+      next(error);
+    });
+   }
+
+
+   finds(req, res, next)  {
+    const { role } = req.query;
+  
+    // Create a conditions object based on provided query parameters
+    const conditions = {};
+  
+    if (role) {
+      conditions.role = role;
+    }
+   
+    // Find users that match the specified conditions
+    Users.find(conditions)
+      .then(users => {
+        // Respond with the found users
+        res.json(users);
+      })
+      .catch(error => {
+        // Handle errors
+        console.error(error);
+        next(error);
+      });
+  }
 }
 
-module.exports = new UserControllers;
+module.exports = new UserControllers();

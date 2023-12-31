@@ -1,0 +1,21 @@
+<h2>Order Information</h2>
+<form action="/update-order/:orderId" method="post">
+  <label for="orderId">Order ID:</label>
+  <input type="text" id="orderId" name="orderId" required>
+
+  <h3>Tracking Info</h3>
+  <label for="status">Status:</label>
+  <input type="text" id="status" name="trackingInfo[status]" required>
+
+  <label for="location">Location:</label>
+  <input type="text" id="location" name="trackingInfo[location]" required>
+
+  <h3>Point Managers</h3>
+  <label for="pointManagerId1">Point Manager 1 ID:</label>
+  <input type="text" id="pointManagerId1" name="pointManagerId1" required>
+
+  <label for="pointManagerId2">Point Manager 2 ID:</label>
+  <input type="text" id="pointManagerId2" name="pointManagerId2" required>
+
+  <button type="submit">Submit</button>
+</form>

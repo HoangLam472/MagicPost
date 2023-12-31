@@ -38,4 +38,4 @@ const oders = new Schema({
   pointManagerStats: [pointManagerStatsSchema]
 });
 
-module.exports = mongoose.model('oders', oders);
+module.exports = mongoose.model('order', oders);
