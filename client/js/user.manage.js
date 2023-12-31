@@ -1,4 +1,4 @@
-import {config} from '../config.js'
+import { config } from '../config.js'
 
 const form = {
     userName: document.getElementById('admin-username'),
@@ -23,11 +23,11 @@ let add_user = document.getElementById('btn-admin').addEventListener('click', (e
     post_add_user(data);
 })
 
-document.getElementById("icon__refresh").addEventListener('click',(e) => {
-    get_all_user ()
+document.getElementById("icon__refresh").addEventListener('click', (e) => {
+    get_all_user()
 });
 
-function get_all_user () {
+function get_all_user() {
     const token = window.sessionStorage.getItem('token');
     const url = `${config.API_URL}/api/user/get-system-user`;
     fetch(url, {
@@ -52,7 +52,7 @@ function get_all_user () {
             const objArr = data
             document.querySelector("#table2 tbody").innerHTML = "";
             let count = 0;
-            for(let i = 0; i< objArr.length; i++){
+            for (let i = 0; i < objArr.length; i++) {
                 const id = objArr[i]._id;
                 let tr = document.createElement("tr");
                 let c1 = document.createElement("td");
@@ -63,13 +63,21 @@ function get_all_user () {
                 let c6 = document.createElement("td");
                 let c7 = document.createElement("td");
                 let c9 = document.createElement("td");
-                
+
                 c1.innerHTML = ++count;
                 c2.innerHTML = objArr[i]._id;
                 c3.innerHTML = objArr[i].userName;
                 c4.innerHTML = objArr[i].phone;
-                c5.innerHTML = objArr[i].role;
-                c6.innerHTML = objArr[i].address ;
+                c5.innerHTML = objArr[i].role === "admin" 
+                    ? "Admin" 
+                        : objArr[i].role === "head of transaction point" 
+                        ? "Trưởng điểm GD" 
+                            : objArr[i].role === "gathering point leader" 
+                            ? "Trưởng điểm TK" 
+                                : objArr[i].role === "assembly point staff" 
+                                ? "Nhân viên điểm TK" 
+                                    : "Nhân viên điểm GD" ;
+                c6.innerHTML = objArr[i].address;
                 c7.innerHTML = objArr[i].email;
                 c9.innerHTML = '<td><input type="button" class="delete__nv" value="Delete" onclick="SomeDeleteRowFunction(this)"></td>'
                 c9.firstChild.setAttribute('id', id);
@@ -90,7 +98,7 @@ function get_all_user () {
 }
 
 
-function post_add_user (data) {
+function post_add_user(data) {
     const token = window.sessionStorage.getItem('token')
     const url = `${config.API_URL}/api/user/register`;
     fetch(url, {

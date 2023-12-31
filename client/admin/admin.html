@@ -47,7 +47,7 @@
             </div>
 
             <!-- <div class="icon--angle"><i class="fa-solid fa-angle-down"></i></div> -->
-            <div class="sign_out"><a href="../index.html">Đăng xuất</a></div>
+            <div class="sign_out"><a href="../pages/home.html">Đăng xuất</a></div>
           </div>
           <div class="manager__main">
             <div  id="add--refresh" class="none add--refresh">
@@ -77,7 +77,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <!-- <tr>
                   <td>1</td>
                   <td>1djdjdj</td>
 
@@ -87,7 +87,7 @@
                   <td>đfff</td>
                   <td>staff1@gmail.com</td>
                   <td class="delete" id="delete">delete</td>
-                </tr>
+                </tr> -->
               </tbody>
               <tfoot></tfoot>
             </table>
@@ -110,11 +110,21 @@
                 </label>
                 <label>
                   <span>Chức vụ</span>
-                  <input type="text" id="admin-role"/>
+                  <select id="admin-role">
+                    <option value="head of transaction point">Trưởng điểm GD</option>
+                    <option value="gathering point leader">Trưởng điểm TK</option>
+                    <option value="assembly point staff">Nhân viên điểm TK</option>
+                    <option value="transaction point staff">Nhân viên điểm GD</option>
+                  </select>
                 </label>
                 <label>
                   <span>Nơi làm việc</span>
-                  <input type="text" id="admin-post-office"/>
+                  <select id="admin-post-office">
+                    <option value="6584ef78df0a5607c1455315">Điểm GD Hà Nội</option>
+                    <option value="6584f121df0a5607c145531b">Điểm TK Hà Nội</option>
+                    <option value="6584f17bdf0a5607c145531d">Điểm GD Vĩnh Phúc</option>
+                    <option value="6584f19bdf0a5607c145531f">Điểm TK Vĩnh Phúc</option>
+                  </select>
                 </label>
                 <label>
                   <span>Địa chỉ</span>
@@ -134,12 +144,12 @@
             <div id="page-2"  class="piechart  " >
               <select id="select-2" value="k1">
                 <option value="k1">Toàn quốc</option>
-                <option value="k2">Điểm tập kết 1</option>
-                <option value="k3">Điểm tập kết 2</option>
-                <option value="k4">Điểm tập kết 3</option>
-                <option value="k5">Điểm giao dịch 1</option>
-                <option value="k6">Điểm giao dịch 2</option>
-                <option value="k7">Điểm giao dịch 3</option>
+                <option value="k2">Điểm TK Hà Nội</option>
+                <option value="k3">Điểm TK Quảng Ninh</option>
+                <option value="k4">Điểm TK Vĩnh Phúc</option>
+                <option value="k5">Điểm GD Hà Nội</option>
+                <option value="k6">Điểm GD Quảng Ninh</option>
+                <option value="k7">Điểm GD Vĩnh Phúc</option>
                 
               </select>
               <div id="piechart" style="width: calc(100vw -140px); height: calc(100vh - 140px);"></div>

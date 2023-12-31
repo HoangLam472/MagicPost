@@ -60,15 +60,15 @@ function login_staff (username, password, role) {
             window.sessionStorage.setItem('role', data.role);
             window.sessionStorage.setItem('user', JSON.stringify(data));
             if (role === "admin") {
-                window.open("./admin/admin.html", "_self");
+                window.open("/client/admin/admin.html", "_self");
             } else if (role === "gathering point leader") {
-                window.open("./manager/manager.html", "_self");
+                window.open("/client/manager/manager.html", "_self");
             } else if (role === "assembly point staff") {
-                window.open("./staff/staff1.html", "_self");
+                window.open("/client/staff/staff1.html", "_self");
             } else if (role === "transaction point staff") {
-                window.open("./staff/staff.html", "_self");
+                window.open("/client/staff/staff.html", "_self");
             } else if (role === "head of transaction point") {
-                window.open("./manager/manager1.html", "_self");
+                window.open("/client/manager/manager1.html", "_self");
             }
         }
     })

@@ -263,3 +263,14 @@ label span{
     border: none;
     outline: none;
 }
+
+label select {
+    float: right;
+    height: 34px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid #DDE2E8;
+    margin-bottom: 10px;
+    width: 193px;
+    color: #000;
+}

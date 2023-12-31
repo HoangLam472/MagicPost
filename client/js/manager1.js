@@ -34,7 +34,7 @@ var modal = document.getElementById("myModal");
 var btn = document.getElementById("add-user-btn");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsById("form__close--manager");
+// var span = document.getElementsById("form__close--manager1");
 
 // When the user clicks on the button, open the modal
 // btn.onclick = function() {
@@ -84,7 +84,7 @@ function SomeDeleteRowFunction(o) {
    document.getElementById("change__background-manager1").classList.remove("change__background");
  });
 
- document.getElementById("btn-manager1").addEventListener('click',function(){
+ document.getElementById("btn-manager").addEventListener('click',function(){
    document.getElementById("piechart-manager1").classList.add("none");
    var table1 = document.getElementById("table1")
    table1.classList.remove("none");

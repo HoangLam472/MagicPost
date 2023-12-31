@@ -100,6 +100,8 @@ let add_user = document.querySelector('#btn-manager').addEventListener('click', 
 
 function post_add_user (email, username, phone, address, password) {
     const token = window.sessionStorage.getItem('token')
+    const pathname = window.location.pathname;
+    const filePath = pathname.split('/')[3];
     const url = `${config.API_URL}/api/user/register`;
     fetch(url, {
         method: 'POST',
@@ -108,7 +110,7 @@ function post_add_user (email, username, phone, address, password) {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`
         },
-        body: JSON.stringify({email: email, userName: username, phone: phone, address: address, password: password, role: 'transaction point staff'})
+        body: JSON.stringify({email: email, userName: username, phone: phone, address: address, password: password, role: filePath === 'manager.html' ? 'assembly point staff' : 'transaction point staff'})
     }).then((res) => {
         if (!res.ok) {
             alert('Lỗi dữ liệu');
